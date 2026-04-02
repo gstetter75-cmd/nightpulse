@@ -1,0 +1,22 @@
+{
+  "name": "nightpulse",
+  "private": true,
+  "workspaces": [
+    "packages/shared",
+    "packages/pipeline",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "build:shared": "npm run build -w @nightpulse/shared",
+    "build:pipeline": "npm run build -w @nightpulse/pipeline",
+    "build:frontend": "npm run build -w @nightpulse/frontend",
+    "dev:pipeline": "npm run dev -w @nightpulse/pipeline",
+    "dev:frontend": "npm run dev -w @nightpulse/frontend",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

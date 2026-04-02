@@ -1,0 +1,79 @@
+'use client';
+
+import { AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { useCallback, useState } from 'react';
+import type { DbEvent, EventCategory } from '@nightpulse/shared';
+import { EVENT_CATEGORIES } from '@nightpulse/shared';
+import { MapControls } from '@/components/map/map-controls';
+import { MapPopup } from '@/components/map/map-popup';
+import { PageTransition } from '@/components/layout/page-transition';
+import { useGeolocation } from '@/hooks/use-geolocation';
+import { useEvents } from '@/hooks/use-events';
+import { useRealtimeEvents } from '@/hooks/use-realtime-events';
+
+// Dynamic import - maps need browser APIs
+const LiveMap = dynamic(
+  () => import('@/components/map/live-map').then((mod) => ({ default: mod.LiveMap })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center bg-[var(--dark-surface)]">
+        <div className="text-white/40 animate-pulse">Karte wird geladen...</div>
+      </div>
+    ),
+  },
+);
+
+export default function MapPage() {
+  const { lat, lng, refresh: refreshLocation } = useGeolocation();
+  const { events } = useEvents({ lat, lng, radiusKm: 50 });
+  useRealtimeEvents();
+
+  const [selectedEvent, setSelectedEvent] = useState<DbEvent | null>(null);
+  const [categoryFilters, setCategoryFilters] = useState<ReadonlySet<EventCategory>>(
+    new Set(EVENT_CATEGORIES),
+  );
+
+  const filteredEvents = events.filter((e) => categoryFilters.has(e.category));
+
+  const handleZoomIn = useCallback(() => {
+    // Handled by map controls - placeholder for map ref integration
+  }, []);
+
+  const handleZoomOut = useCallback(() => {
+    // Handled by map controls - placeholder for map ref integration
+  }, []);
+
+  return (
+    <PageTransition className="h-screen pt-16">
+      <div className="relative w-full h-full">
+        {/* Map */}
+        <LiveMap
+          events={filteredEvents}
+          onMarkerClick={setSelectedEvent}
+          className="w-full h-full"
+        />
+
+        {/* Controls */}
+        <MapControls
+          onZoomIn={handleZoomIn}
+          onZoomOut={handleZoomOut}
+          onLocate={refreshLocation}
+          filters={categoryFilters}
+          onFilterChange={setCategoryFilters}
+        />
+
+        {/* Popup */}
+        <AnimatePresence>
+          {selectedEvent && (
+            <MapPopup
+              event={selectedEvent}
+              onClose={() => setSelectedEvent(null)}
+            />
+          )}
+        </AnimatePresence>
+      </div>
+    </PageTransition>
+  );
+}
