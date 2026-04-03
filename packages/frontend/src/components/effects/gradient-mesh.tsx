@@ -11,13 +11,15 @@ const DEFAULT_COLORS = [
   'rgba(236, 72, 153, 1)',
   'rgba(59, 130, 246, 1)',
   'rgba(6, 182, 212, 1)',
+  'rgba(20, 184, 166, 1)',
 ];
 
 const BLOB_CONFIGS = [
-  { top: '10%', left: '15%', size: '40vw', duration: '20s', delay: '0s' },
-  { top: '60%', left: '60%', size: '35vw', duration: '25s', delay: '-5s' },
-  { top: '30%', left: '70%', size: '30vw', duration: '22s', delay: '-10s' },
-  { top: '70%', left: '20%', size: '45vw', duration: '28s', delay: '-15s' },
+  { top: '5%', left: '10%', size: '50vw', duration: '20s', delay: '0s', pulseDelay: '0s' },
+  { top: '55%', left: '55%', size: '45vw', duration: '25s', delay: '-5s', pulseDelay: '-2s' },
+  { top: '25%', left: '65%', size: '40vw', duration: '22s', delay: '-10s', pulseDelay: '-4s' },
+  { top: '65%', left: '15%', size: '55vw', duration: '28s', delay: '-15s', pulseDelay: '-6s' },
+  { top: '40%', left: '40%', size: '35vw', duration: '24s', delay: '-8s', pulseDelay: '-3s' },
 ];
 
 export function GradientMesh({
@@ -40,12 +42,18 @@ export function GradientMesh({
             width: config.size,
             height: config.size,
             background: `radial-gradient(circle, ${colors[i % colors.length]} 0%, transparent 70%)`,
-            filter: 'blur(80px)',
-            animation: `aurora ${config.duration} ease-in-out infinite`,
-            animationDelay: config.delay,
+            filter: 'blur(100px)',
+            animation: `aurora ${config.duration} ease-in-out infinite, blob-pulse 8s ease-in-out infinite`,
+            animationDelay: `${config.delay}, ${config.pulseDelay}`,
           }}
         />
       ))}
+      <style jsx>{`
+        @keyframes blob-pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.15); }
+        }
+      `}</style>
     </div>
   );
 }

@@ -19,7 +19,7 @@ interface GlowButtonProps {
 
 const VARIANT_STYLES: Record<Variant, string> = {
   primary:
-    'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-[0_0_30px_rgba(168,85,247,0.4),0_0_60px_rgba(236,72,153,0.2)]',
+    'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-[0_0_40px_rgba(168,85,247,0.5),0_0_80px_rgba(236,72,153,0.25)]',
   secondary:
     'bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]',
   ghost:
@@ -61,7 +61,7 @@ export function GlowButton({
 
   const classes = [
     'relative inline-flex items-center justify-center font-semibold overflow-hidden',
-    'transition-all duration-300 cursor-pointer',
+    'transition-all duration-300 cursor-pointer group',
     VARIANT_STYLES[variant],
     SIZE_STYLES[size],
     disabled ? 'opacity-50 pointer-events-none' : '',
@@ -70,7 +70,40 @@ export function GlowButton({
 
   const inner = (
     <>
-      <span className="relative z-10">{children}</span>
+      {/* Shimmer sweep for primary variant */}
+      {variant === 'primary' && (
+        <span
+          className="absolute inset-0 pointer-events-none z-[1]"
+          style={{
+            background:
+              'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.12) 45%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.12) 55%, transparent 60%)',
+            animation: 'btn-shimmer 3s ease-in-out infinite',
+          }}
+        />
+      )}
+      <span className="relative z-10 inline-flex items-center gap-1">
+        {children}
+        {/* Arrow that slides in on hover for link buttons */}
+        {href && (
+          <span
+            className="inline-block overflow-hidden w-0 group-hover:w-5 transition-all duration-300"
+            aria-hidden="true"
+          >
+            <svg
+              className="w-4 h-4 translate-x-[-8px] group-hover:translate-x-0 transition-transform duration-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        )}
+      </span>
       {ripples.map((ripple) => (
         <span
           key={ripple.id}

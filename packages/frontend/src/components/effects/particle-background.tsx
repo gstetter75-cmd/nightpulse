@@ -14,14 +14,15 @@ interface Particle {
   vx: number;
   vy: number;
   radius: number;
+  opacity: number;
   color: string;
 }
 
 const NEON_COLORS = [
-  'rgba(168, 85, 247, 0.7)',
-  'rgba(236, 72, 153, 0.7)',
-  'rgba(59, 130, 246, 0.7)',
-  'rgba(6, 182, 212, 0.7)',
+  'rgba(168, 85, 247,',
+  'rgba(236, 72, 153,',
+  'rgba(59, 130, 246,',
+  'rgba(6, 182, 212,',
 ];
 
 export function ParticleBackground({
@@ -40,13 +41,16 @@ export function ParticleBackground({
     (width: number, height: number) => {
       const particles: Particle[] = [];
       for (let i = 0; i < particleCount; i++) {
+        const opacity = Math.random() * 0.5 + 0.3; // 0.3 - 0.8
+        const colorBase = NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)];
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * 0.5,
           vy: (Math.random() - 0.5) * 0.5,
-          radius: Math.random() * 2 + 1,
-          color: NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+          radius: Math.random() * 2 + 1, // 1 - 3px
+          opacity,
+          color: `${colorBase} ${opacity})`,
         });
       }
       particlesRef.current = particles;
@@ -87,7 +91,11 @@ export function ParticleBackground({
       const rect = canvas.getBoundingClientRect();
       mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     };
+    const handleMouseLeave = () => {
+      mouseRef.current = { x: -1000, y: -1000 };
+    };
     canvas.addEventListener('mousemove', handleMouse);
+    canvas.addEventListener('mouseleave', handleMouseLeave);
 
     // IntersectionObserver
     const observer = new IntersectionObserver(
@@ -112,15 +120,19 @@ export function ParticleBackground({
 
       for (const p of particles) {
         if (!isReduced) {
-          // Mouse interaction
+          // Mouse repel interaction
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
+          if (dist < 150 && dist > 0) {
             const force = (150 - dist) / 150;
-            p.vx -= (dx / dist) * force * 0.02;
-            p.vy -= (dy / dist) * force * 0.02;
+            p.vx -= (dx / dist) * force * 0.03;
+            p.vy -= (dy / dist) * force * 0.03;
           }
+
+          // Damping to keep velocities in check
+          p.vx *= 0.99;
+          p.vy *= 0.99;
 
           p.x += p.vx;
           p.y += p.vy;
@@ -139,7 +151,7 @@ export function ParticleBackground({
         ctx.fill();
       }
 
-      // Draw connections (skip in reduced motion)
+      // Draw connection lines between nearby particles (skip in reduced motion)
       if (!isReduced) {
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
@@ -147,16 +159,31 @@ export function ParticleBackground({
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < connectDistance) {
+              const alpha = 0.15 * (1 - dist / connectDistance);
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(168, 85, 247, ${0.15 * (1 - dist / connectDistance)})`;
+              ctx.strokeStyle = `rgba(168, 85, 247, ${alpha})`;
               ctx.lineWidth = 0.5;
               ctx.stroke();
             }
           }
         }
       }
+
+      // Gradient fade at top and bottom edges
+      const fadeHeight = 80;
+      const topGrad = ctx.createLinearGradient(0, 0, 0, fadeHeight);
+      topGrad.addColorStop(0, 'rgba(10, 10, 15, 1)');
+      topGrad.addColorStop(1, 'rgba(10, 10, 15, 0)');
+      ctx.fillStyle = topGrad;
+      ctx.fillRect(0, 0, width, fadeHeight);
+
+      const bottomGrad = ctx.createLinearGradient(0, height - fadeHeight, 0, height);
+      bottomGrad.addColorStop(0, 'rgba(10, 10, 15, 0)');
+      bottomGrad.addColorStop(1, 'rgba(10, 10, 15, 1)');
+      ctx.fillStyle = bottomGrad;
+      ctx.fillRect(0, height - fadeHeight, width, fadeHeight);
     };
 
     draw();
@@ -165,6 +192,7 @@ export function ParticleBackground({
       cancelAnimationFrame(animationRef.current);
       window.removeEventListener('resize', resize);
       canvas.removeEventListener('mousemove', handleMouse);
+      canvas.removeEventListener('mouseleave', handleMouseLeave);
       mq.removeEventListener('change', handleMotionChange);
       observer.disconnect();
     };

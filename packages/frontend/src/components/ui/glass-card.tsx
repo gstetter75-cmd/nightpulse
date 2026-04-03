@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, type HTMLMotionProps } from 'framer-motion';
-import { type ReactNode } from 'react';
+import { type ReactNode, useCallback, useRef } from 'react';
 
 const GLOW_COLORS = {
   purple: 'rgba(168, 85, 247, 0.15)',
@@ -35,6 +35,28 @@ export function GlassCard({
   withBorder = false,
   ...motionProps
 }: GlassCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!hoverable || !cardRef.current) return;
+      const rect = cardRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) * 4;
+      cardRef.current.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    },
+    [hoverable],
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    if (!cardRef.current) return;
+    cardRef.current.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+  }, []);
+
   const baseClasses = [
     'relative rounded-2xl overflow-hidden',
     'bg-white/[0.03] backdrop-blur-xl',
@@ -47,20 +69,44 @@ export function GlassCard({
 
   return (
     <motion.div
+      ref={cardRef}
       className={baseClasses}
-      style={{ backgroundColor: GLOW_COLORS[glowColor] }}
+      style={{
+        backgroundColor: GLOW_COLORS[glowColor],
+        transition: 'transform 0.2s ease-out, box-shadow 0.3s ease',
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       whileHover={
         hoverable
           ? {
-              scale: 1.02,
               boxShadow: HOVER_GLOW_COLORS[glowColor],
-              transition: { duration: 0.3 },
             }
           : undefined
       }
       {...motionProps}
     >
-      {children}
+      {/* Top edge shine / light hit */}
+      <div
+        className="absolute inset-x-0 top-0 h-px pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.15) 70%, transparent 100%)',
+        }}
+      />
+      {/* Subtle noise texture */}
+      <div
+        className="absolute inset-0 pointer-events-none z-[1]"
+        style={{
+          opacity: 0.02,
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          backgroundRepeat: 'repeat',
+          backgroundSize: '128px 128px',
+        }}
+      />
+      {/* Children rendered above overlays */}
+      <div className="relative z-[2]">{children}</div>
     </motion.div>
   );
 }

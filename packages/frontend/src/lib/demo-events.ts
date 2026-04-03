@@ -11,7 +11,7 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     source: 'scraper',
     title: 'Berghain: Klubnacht',
     description:
-      'Die legendaere Klubnacht im Berghain. Techno auf dem Hauptfloor, House im Panorama Bar. Lineup wird am Abend bekannt gegeben.',
+      'Die legendäre Klubnacht im Berghain. Techno auf dem Hauptfloor, House im Panorama Bar. Lineup wird am Abend bekannt gegeben.',
     startDate: '2026-04-04T23:59:00.000Z',
     endDate: '2026-04-06T06:00:00.000Z',
     url: 'https://berghain.berlin',
@@ -53,13 +53,13 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     source: 'scraper',
     title: 'Tresor: New Faces',
     description:
-      'Aufstrebende Kuenstler der Berliner Techno-Szene praesentieren sich im legendaeren Tresor.',
+      'Aufstrebende Künstler der Berliner Techno-Szene präsentieren sich im legendären Tresor.',
     startDate: '2026-04-05T00:00:00.000Z',
     endDate: '2026-04-05T10:00:00.000Z',
     url: 'https://tresorberlin.com',
     imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800',
     venueName: 'Tresor',
-    venueAddress: 'Koepenicker Str. 70, 10179 Berlin',
+    venueAddress: 'Köpenicker Str. 70, 10179 Berlin',
     city: 'Berlin',
     lat: 52.5098,
     lng: 13.4195,
@@ -74,7 +74,7 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     source: 'scraper',
     title: 'SchwuZ: Latinx Fiesta',
     description:
-      'Reggaeton, Salsa, Bachata - die heisseste Latin-Party in Neukoelln!',
+      'Reggaeton, Salsa, Bachata - die heißeste Latin-Party in Neukölln!',
     startDate: '2026-04-04T22:00:00.000Z',
     endDate: '2026-04-05T05:00:00.000Z',
     url: 'https://schwuz.de',
@@ -116,7 +116,7 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     source: 'eventbrite',
     title: 'A-Trane: Jazz Session',
     description:
-      'Live Jazz im legendaeren A-Trane. Jam Session mit internationalen Musikern.',
+      'Live Jazz im legendären A-Trane. Jam Session mit internationalen Musikern.',
     startDate: '2026-04-05T21:00:00.000Z',
     endDate: '2026-04-06T01:00:00.000Z',
     url: 'https://a-trane.de',
@@ -143,7 +143,7 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     url: 'https://yaam.de',
     imageUrl: 'https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800',
     venueName: 'YAAM',
-    venueAddress: 'An der Schillingbruecke 3, 10243 Berlin',
+    venueAddress: 'An der Schillingbrücke 3, 10243 Berlin',
     city: 'Berlin',
     lat: 52.5075,
     lng: 13.4497,
@@ -158,7 +158,7 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     source: 'scraper',
     title: 'Lido: Indie Rock Night',
     description:
-      'Live-Bands und DJs praesentieren das Beste aus Indie und Alternative Rock.',
+      'Live-Bands und DJs präsentieren das Beste aus Indie und Alternative Rock.',
     startDate: '2026-04-04T20:00:00.000Z',
     endDate: '2026-04-05T02:00:00.000Z',
     url: 'https://lido-berlin.de',
@@ -221,7 +221,7 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     source: 'eventbrite',
     title: 'Columbia Theater: Pop Sensation',
     description:
-      'Aufstrebende Pop-Acts live auf der Buehne. Support und Afterparty inklusive.',
+      'Aufstrebende Pop-Acts live auf der Bühne. Support und Afterparty inklusive.',
     startDate: '2026-04-06T19:00:00.000Z',
     endDate: '2026-04-06T23:30:00.000Z',
     url: 'https://columbia-theater.de',
@@ -242,7 +242,7 @@ export const DEMO_EVENTS: readonly DbEvent[] = [
     source: 'scraper',
     title: 'Festsaal Kreuzberg: Mixed Vibes',
     description:
-      'Genre-uebergreifende Nacht mit Live-Bands, DJs und Performance-Kunst.',
+      'Genre-übergreifende Nacht mit Live-Bands, DJs und Performance-Kunst.',
     startDate: '2026-04-05T20:00:00.000Z',
     endDate: '2026-04-06T04:00:00.000Z',
     url: 'https://festsaal-kreuzberg.de',

@@ -40,6 +40,40 @@ function formatDate(dateStr: string): string {
   }
 }
 
+function ClockIcon() {
+  return (
+    <svg
+      className="inline-block w-3.5 h-3.5 mr-1 -mt-0.5 opacity-60"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
+function LocationIcon() {
+  return (
+    <svg
+      className="inline-block w-3.5 h-3.5 mr-1 -mt-0.5 opacity-60"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
 export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
   const categoryGradient = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS.OTHER;
 
@@ -52,14 +86,15 @@ export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
       transition={{ delay: index * 0.1 }}
     >
       <Link href={`/events/${event.id}`}>
-        <GlassCard glowColor="purple" className="group cursor-pointer h-full">
+        <GlassCard glowColor="purple" className="group cursor-pointer h-full hover-gradient-border">
           {/* Image */}
           <div className="relative h-48 overflow-hidden">
             {event.imageUrl ? (
               <img
                 src={event.imageUrl}
                 alt={event.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                style={{ transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-purple-900/50 to-pink-900/50" />
@@ -94,8 +129,14 @@ export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
             <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors line-clamp-1">
               {event.title}
             </h3>
-            <p className="text-sm text-white/50">{formatDate(event.startDate)}</p>
-            <p className="text-sm text-white/70">{event.venueName}</p>
+            <p className="text-sm text-white/50 flex items-center">
+              <ClockIcon />
+              {formatDate(event.startDate)}
+            </p>
+            <p className="text-sm text-white/70 flex items-center">
+              <LocationIcon />
+              {event.venueName}
+            </p>
             <div className="pt-2">
               {event.price ? (
                 <span className="text-sm font-semibold text-purple-400">{event.price}</span>
@@ -104,6 +145,17 @@ export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
               )}
             </div>
           </div>
+
+          {/* Animated gradient border on hover */}
+          <div
+            className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{
+              background:
+                'linear-gradient(var(--dark-surface), var(--dark-surface)) padding-box, conic-gradient(from var(--border-angle, 0deg), #a855f7, #ec4899, #06b6d4, #a855f7) border-box',
+              border: '1px solid transparent',
+              animation: 'spin-border 4s linear infinite',
+            }}
+          />
         </GlassCard>
       </Link>
     </motion.div>

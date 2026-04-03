@@ -10,11 +10,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   title: 'NightPulse - Entdecke die Nacht',
   description:
-    'Finde die besten Events und Clubs in deiner Naehe. Echtzeit Event-Discovery mit interaktiver Karte.',
+    'Finde die besten Events und Clubs in deiner Nähe. Echtzeit Event-Discovery mit interaktiver Karte.',
   keywords: ['Events', 'Nightlife', 'Berlin', 'Clubs', 'Techno', 'Parties'],
   openGraph: {
     title: 'NightPulse - Entdecke die Nacht',
-    description: 'Finde Events. Spuere den Vibe. Live.',
+    description: 'Finde Events. Spüre den Vibe. Live.',
     type: 'website',
   },
 };

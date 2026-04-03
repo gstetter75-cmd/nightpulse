@@ -56,7 +56,7 @@ export default function EventsPage() {
             mode="blur-in"
           />
           <p className="text-white/50 text-lg">
-            Entdecke, was in deiner Naehe passiert
+            Entdecke, was in deiner Nähe passiert
           </p>
         </div>
       </ParallaxSection>
