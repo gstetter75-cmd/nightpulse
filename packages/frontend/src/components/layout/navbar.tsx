@@ -3,7 +3,6 @@
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
-import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { CitySwitcher } from '@/components/city/city-switcher';
 
 const NAV_LINKS = [
@@ -67,12 +66,10 @@ export function Navbar() {
                 />
               </Link>
             ))}
-            <ThemeToggle />
           </div>
 
-          {/* Mobile: theme toggle + hamburger */}
+          {/* Mobile: hamburger */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="flex flex-col gap-1.5 p-2"

@@ -7,7 +7,6 @@ import { GradientMesh } from '@/components/effects/gradient-mesh';
 import { CursorGlow } from '@/components/effects/cursor-glow';
 import { ToastProvider } from '@/components/ui/toast';
 import { RegisterServiceWorker } from '@/components/pwa/register-sw';
-import { ThemeProvider } from '@/components/theme/theme-provider';
 import { CityProvider } from '@/components/city/city-provider';
 import { CityGate } from '@/components/city/city-gate';
 
@@ -47,30 +46,28 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#a855f7" />
       </head>
-      <body className="bg-[var(--dark-bg)] text-[var(--text-primary)] antialiased font-[family-name:var(--font-inter)]">
-        <ThemeProvider>
-          <RegisterServiceWorker />
-          <ToastProvider>
-            <CityProvider>
-              <CityGate>
-                {/* Global animated background */}
-                <GradientMesh className="fixed inset-0 z-0" opacity={0.15} />
+      <body className="bg-[#0a0a0f] text-white antialiased font-[family-name:var(--font-inter)]">
+        <RegisterServiceWorker />
+        <ToastProvider>
+          <CityProvider>
+            <CityGate>
+              {/* Global animated background */}
+              <GradientMesh className="fixed inset-0 z-0" opacity={0.15} />
 
-                {/* Cursor glow effect */}
-                <CursorGlow />
+              {/* Cursor glow effect */}
+              <CursorGlow />
 
-                {/* Navigation */}
-                <Navbar />
+              {/* Navigation */}
+              <Navbar />
 
-                {/* Main content */}
-                <main className="relative z-10">{children}</main>
+              {/* Main content */}
+              <main className="relative z-10">{children}</main>
 
-                {/* Footer */}
-                <Footer />
-              </CityGate>
-            </CityProvider>
-          </ToastProvider>
-        </ThemeProvider>
+              {/* Footer */}
+              <Footer />
+            </CityGate>
+          </CityProvider>
+        </ToastProvider>
       </body>
     </html>
   );
