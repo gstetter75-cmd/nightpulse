@@ -1,13 +1,16 @@
 import cron, { type ScheduledTask } from 'node-cron';
 import type { SupabaseClient } from '@supabase/supabase-js';
-import type { Region } from '@nightpulse/shared';
+import type { NormalizedEvent, Region } from '@nightpulse/shared';
 import { BaseSource } from './sources/base-source.js';
 import { normalizeEvents } from './normalizer/normalize.js';
 import { deduplicateEvents } from './dedup/dedup.js';
-import { upsertEvents } from './db/upsert.js';
+import { upsertEvents, type UpsertResult } from './db/upsert.js';
 import { createLogger } from './utils/logger.js';
 
 const logger = createLogger('scheduler');
+
+/** Store callback that accepts events and returns insert/update counts */
+export type StoreFn = (events: readonly NormalizedEvent[]) => Promise<{ inserted: number; updated: number; errors: readonly Error[] }>;
 
 /**
  * Orchestrates cron-based event pipeline execution.
@@ -17,11 +20,19 @@ const logger = createLogger('scheduler');
 export class Scheduler {
   private readonly sources: BaseSource[] = [];
   private readonly tasks: ScheduledTask[] = [];
-  private readonly client: SupabaseClient;
+  private readonly storeFn: StoreFn;
   private running = false;
 
-  constructor(client: SupabaseClient) {
-    this.client = client;
+  constructor(client: SupabaseClient | null, jsonStoreFn?: StoreFn) {
+    if (client) {
+      // Supabase store
+      this.storeFn = (events) => upsertEvents(client, events);
+    } else if (jsonStoreFn) {
+      // JSON fallback store
+      this.storeFn = jsonStoreFn;
+    } else {
+      throw new Error('Scheduler requires either a Supabase client or a JSON store function');
+    }
   }
 
   /** Register a data source for scheduled fetching */
@@ -116,8 +127,8 @@ export class Scheduler {
           continue;
         }
 
-        // 4. Upsert to database
-        const result = await upsertEvents(this.client, deduplicated);
+        // 4. Store events (Supabase or JSON)
+        const result = await this.storeFn(deduplicated);
         logger.info(
           {
             source: source.name,

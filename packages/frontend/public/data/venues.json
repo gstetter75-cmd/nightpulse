@@ -1,0 +1,202 @@
+[
+  {
+    "id": "berghain-berlin",
+    "name": "Berghain",
+    "address": "Am Wriezener Bhf, 10243 Berlin",
+    "city": "Berlin",
+    "lat": 52.5112,
+    "lng": 13.4428,
+    "website": "https://berghain.berlin",
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
+  },
+  {
+    "id": "watergate-berlin",
+    "name": "Watergate",
+    "address": "Falckensteinstr. 49a, 10997 Berlin",
+    "city": "Berlin",
+    "lat": 52.5015,
+    "lng": 13.4458,
+    "website": "https://water-gate.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
+  },
+  {
+    "id": "tresor-berlin",
+    "name": "Tresor",
+    "address": "Kopenicker Str. 70, 10179 Berlin",
+    "city": "Berlin",
+    "lat": 52.5098,
+    "lng": 13.4195,
+    "website": "https://tresorberlin.com",
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+  },
+  {
+    "id": "kitkatclub-berlin",
+    "name": "KitKatClub",
+    "address": "Kopenicker Str. 76, 10179 Berlin",
+    "city": "Berlin",
+    "lat": 52.5095,
+    "lng": 13.4185,
+    "website": "https://kitkatclub.org",
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+  },
+  {
+    "id": "about-blank-berlin",
+    "name": "About Blank",
+    "address": "Markgrafendamm 24c, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.5068,
+    "lng": 13.4585,
+    "website": "https://aboutblank.li",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "rso-berlin-berlin",
+    "name": "RSO.Berlin",
+    "address": "Gabriel-Max-Str. 20, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.5055,
+    "lng": 13.461,
+    "website": "https://rso.berlin",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "ohm-berlin",
+    "name": "OHM",
+    "address": "Kopenicker Str. 70, 10179 Berlin",
+    "city": "Berlin",
+    "lat": 52.5097,
+    "lng": 13.419,
+    "website": "https://ohm-berlin.com",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "salon-zur-wilden-renate-berlin",
+    "name": "Salon zur Wilden Renate",
+    "address": "Alt-Stralau 70, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.4952,
+    "lng": 13.4682,
+    "website": "https://renate.cc",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "sisyphos-berlin",
+    "name": "Sisyphos",
+    "address": "Hauptstr. 15, 10317 Berlin",
+    "city": "Berlin",
+    "lat": 52.493,
+    "lng": 13.4992,
+    "website": "https://sisyphos-berlin.net",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "kater-blau-berlin",
+    "name": "Kater Blau",
+    "address": "Holzmarktstr. 25, 10243 Berlin",
+    "city": "Berlin",
+    "lat": 52.5112,
+    "lng": 13.4265,
+    "website": "https://katerblau.de",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "a-trane-berlin",
+    "name": "A-Trane",
+    "address": "Bleibtreustr. 1, 10623 Berlin",
+    "city": "Berlin",
+    "lat": 52.5068,
+    "lng": 13.3229,
+    "website": "https://a-trane.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
+    "id": "yaam-berlin",
+    "name": "YAAM",
+    "address": "An der Schillingbrucke 3, 10243 Berlin",
+    "city": "Berlin",
+    "lat": 52.5075,
+    "lng": 13.4497,
+    "website": "https://yaam.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "ritter-butzke-berlin",
+    "name": "Ritter Butzke",
+    "address": "Ritterstr. 26, 10969 Berlin",
+    "city": "Berlin",
+    "lat": 52.5035,
+    "lng": 13.4095,
+    "website": "https://rfrsh.de",
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "schwuz-berlin",
+    "name": "SchwuZ",
+    "address": "Rollbergstr. 26, 12053 Berlin",
+    "city": "Berlin",
+    "lat": 52.4783,
+    "lng": 13.4312,
+    "website": "https://schwuz.de",
+    "imageUrl": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800"
+  },
+  {
+    "id": "festsaal-kreuzberg-berlin",
+    "name": "Festsaal Kreuzberg",
+    "address": "Skalitzer Str. 130, 10999 Berlin",
+    "city": "Berlin",
+    "lat": 52.4991,
+    "lng": 13.4283,
+    "website": "https://festsaal-kreuzberg.de",
+    "imageUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800"
+  },
+  {
+    "id": "lido-berlin",
+    "name": "Lido",
+    "address": "Cuvrystr. 7, 10997 Berlin",
+    "city": "Berlin",
+    "lat": 52.4994,
+    "lng": 13.4421,
+    "website": "https://lido-berlin.de",
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
+  },
+  {
+    "id": "columbia-theater-berlin",
+    "name": "Columbia Theater",
+    "address": "Columbiadamm 13-21, 10965 Berlin",
+    "city": "Berlin",
+    "lat": 52.4842,
+    "lng": 13.3841,
+    "website": "https://columbia-theater.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
+  },
+  {
+    "id": "astra-kulturhaus-berlin",
+    "name": "Astra Kulturhaus",
+    "address": "Revaler Str. 99, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.5072,
+    "lng": 13.454,
+    "website": "https://astra-berlin.de",
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+  },
+  {
+    "id": "prince-charles-berlin",
+    "name": "Prince Charles",
+    "address": "Prinzenstr. 85f, 10969 Berlin",
+    "city": "Berlin",
+    "lat": 52.4997,
+    "lng": 13.408,
+    "website": "https://princecharlesberlin.com",
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+  },
+  {
+    "id": "bi-nuu-berlin",
+    "name": "Bi Nuu",
+    "address": "Schlesische Str. 5, 10997 Berlin",
+    "city": "Berlin",
+    "lat": 52.4978,
+    "lng": 13.4429,
+    "website": "https://bi-nuu.de",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  }
+]

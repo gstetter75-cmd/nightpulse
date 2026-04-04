@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/navbar';
+import { Footer } from '@/components/layout/footer';
 import { GradientMesh } from '@/components/effects/gradient-mesh';
 import { ToastProvider } from '@/components/ui/toast';
 
@@ -36,6 +37,9 @@ export default function RootLayout({
 
           {/* Main content */}
           <main className="relative z-10">{children}</main>
+
+          {/* Footer */}
+          <Footer />
         </ToastProvider>
       </body>
     </html>

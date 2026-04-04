@@ -1,11 +1,26 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import type { DbEvent } from '@nightpulse/shared';
 import { AnimatedText } from '@/components/ui/animated-text';
 import { GlassCard } from '@/components/ui/glass-card';
 import { GlowButton } from '@/components/ui/glow-button';
+import { ShareSheet } from '@/components/events/share-sheet';
 import { blurIn, fadeInUp } from '@/lib/animations';
+
+const MiniMap = dynamic(
+  () => import('@/components/map/mini-map').then((mod) => ({ default: mod.MiniMap })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center bg-white/5">
+        <div className="text-white/40 text-sm animate-pulse">Karte wird geladen...</div>
+      </div>
+    ),
+  },
+);
 
 interface EventDetailProps {
   readonly event: DbEvent;
@@ -40,22 +55,11 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 export function EventDetail({ event }: EventDetailProps) {
+  const [showShareSheet, setShowShareSheet] = useState(false);
   const categoryGradient = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS.OTHER;
 
-  const handleShare = async () => {
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: event.title,
-          text: `${event.title} @ ${event.venueName}`,
-          url: window.location.href,
-        });
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-      }
-    } catch {
-      // User cancelled or share failed - no action needed
-    }
+  const handleShare = () => {
+    setShowShareSheet(true);
   };
 
   return (
@@ -180,14 +184,19 @@ export function EventDetail({ event }: EventDetailProps) {
         >
           <GlassCard hoverable={false} className="p-6">
             <h3 className="text-lg font-semibold mb-4 text-white/80">Standort</h3>
-            <div className="h-48 rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
-              <p className="text-white/40 text-sm">
-                {event.venueName} - {event.lat.toFixed(4)}, {event.lng.toFixed(4)}
-              </p>
+            <div className="h-64 rounded-xl overflow-hidden">
+              <MiniMap lat={event.lat} lng={event.lng} venueName={event.venueName} />
             </div>
           </GlassCard>
         </motion.div>
       </div>
+
+      {/* Share Sheet */}
+      <ShareSheet
+        event={event}
+        isOpen={showShareSheet}
+        onClose={() => setShowShareSheet(false)}
+      />
     </div>
   );
 }

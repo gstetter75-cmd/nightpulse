@@ -34,15 +34,16 @@ export default function MapPage() {
   const [categoryFilters, setCategoryFilters] = useState<ReadonlySet<EventCategory>>(
     new Set(EVENT_CATEGORIES),
   );
+  const [zoom, setZoom] = useState(12);
 
   const filteredEvents = events.filter((e) => categoryFilters.has(e.category));
 
   const handleZoomIn = useCallback(() => {
-    // Handled by map controls - placeholder for map ref integration
+    setZoom((prev) => Math.min(prev + 1, 18));
   }, []);
 
   const handleZoomOut = useCallback(() => {
-    // Handled by map controls - placeholder for map ref integration
+    setZoom((prev) => Math.max(prev - 1, 1));
   }, []);
 
   return (
@@ -52,6 +53,8 @@ export default function MapPage() {
         <LiveMap
           events={filteredEvents}
           onMarkerClick={setSelectedEvent}
+          zoom={zoom}
+          onZoomChange={setZoom}
           className="w-full h-full"
         />
 

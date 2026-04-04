@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import type { DbEvent } from '@nightpulse/shared';
 import { DEFAULT_CENTER } from '@nightpulse/shared';
 
@@ -8,6 +8,8 @@ interface LiveMapProps {
   readonly events: readonly DbEvent[];
   readonly onMarkerClick?: (event: DbEvent) => void;
   readonly className?: string;
+  readonly zoom?: number;
+  readonly onZoomChange?: (zoom: number) => void;
 }
 
 interface ViewState {
@@ -29,12 +31,19 @@ const CATEGORY_COLORS: Record<string, string> = {
   OTHER: '#64748b',
 };
 
-export function LiveMap({ events, onMarkerClick, className = '' }: LiveMapProps) {
+export function LiveMap({ events, onMarkerClick, className = '', zoom: controlledZoom, onZoomChange }: LiveMapProps) {
   const [viewState, setViewState] = useState<ViewState>({
     latitude: DEFAULT_CENTER.lat,
     longitude: DEFAULT_CENTER.lng,
-    zoom: 12,
+    zoom: controlledZoom ?? 12,
   });
+  // Sync controlled zoom from parent
+  useEffect(() => {
+    if (controlledZoom !== undefined && controlledZoom !== viewState.zoom) {
+      setViewState((prev) => ({ ...prev, zoom: controlledZoom }));
+    }
+  }, [controlledZoom]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const [mapLoaded, setMapLoaded] = useState(false);
   const [MapComponents, setMapComponents] = useState<{
     Map: React.ComponentType<Record<string, unknown>>;
@@ -60,7 +69,10 @@ export function LiveMap({ events, onMarkerClick, className = '' }: LiveMapProps)
       {MapComponents ? (
         <MapComponents.Map
           {...(viewState as unknown as Record<string, unknown>)}
-          onMove={(evt: { viewState: ViewState }) => setViewState(evt.viewState)}
+          onMove={(evt: { viewState: ViewState }) => {
+            setViewState(evt.viewState);
+            onZoomChange?.(evt.viewState.zoom);
+          }}
           onLoad={() => setMapLoaded(true)}
           mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
           style={{ width: '100%', height: '100%' }}

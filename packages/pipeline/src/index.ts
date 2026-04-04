@@ -3,35 +3,15 @@ import type { Region } from '@nightpulse/shared';
 import { Scheduler } from './scheduler.js';
 import { EventbriteSource } from './sources/eventbrite.js';
 import { createLogger } from './utils/logger.js';
+import { upsertEventsToJson } from './db/json-store.js';
 
 const logger = createLogger('main');
 
-/** Required environment variables - fail fast if missing */
-const REQUIRED_ENV_VARS = [
-  'SUPABASE_URL',
-  'SUPABASE_SERVICE_ROLE_KEY',
-  'EVENTBRITE_API_KEY',
-] as const;
-
-function validateEnv(): Record<string, string> {
-  const env: Record<string, string> = {};
-  const missing: string[] = [];
-
-  for (const key of REQUIRED_ENV_VARS) {
-    const value = process.env[key];
-    if (!value) {
-      missing.push(key);
-    } else {
-      env[key] = value;
-    }
-  }
-
-  if (missing.length > 0) {
-    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
-  }
-
-  return env;
-}
+/** Default JSON output path relative to pipeline package */
+const DEFAULT_JSON_OUTPUT = new URL(
+  '../../frontend/public/data/events.json',
+  import.meta.url,
+).pathname;
 
 function loadRegions(): readonly Region[] {
   // Default regions - can be extended via config or database
@@ -46,40 +26,67 @@ function loadRegions(): readonly Region[] {
   ] as const;
 }
 
+/** Determine pipeline storage mode based on environment */
+function resolveStorageMode(): { mode: 'supabase'; url: string; key: string } | { mode: 'json'; outputPath: string } {
+  const supabaseUrl = process.env['SUPABASE_URL'];
+  const supabaseKey = process.env['SUPABASE_SERVICE_ROLE_KEY'];
+
+  if (supabaseUrl && supabaseKey) {
+    return { mode: 'supabase', url: supabaseUrl, key: supabaseKey };
+  }
+
+  const outputPath = process.env['JSON_OUTPUT_PATH'] ?? DEFAULT_JSON_OUTPUT;
+  return { mode: 'json', outputPath };
+}
+
 async function main(): Promise<void> {
   try {
     logger.info('NightPulse Pipeline starting...');
 
-    // Validate environment
-    const env = validateEnv();
-    logger.info('Environment validated');
-
-    // Create Supabase service client
-    const supabase = createServiceClient(
-      env['SUPABASE_URL']!,
-      env['SUPABASE_SERVICE_ROLE_KEY']!,
-    );
-    logger.info('Supabase client created');
+    const storage = resolveStorageMode();
+    logger.info({ mode: storage.mode }, 'Storage mode resolved');
 
     // Load regions
     const regions = loadRegions();
     logger.info({ regionCount: regions.length, regions: regions.map((r) => r.name) }, 'Regions loaded');
 
-    // Create scheduler and register sources
-    const scheduler = new Scheduler(supabase);
+    if (storage.mode === 'supabase') {
+      // Supabase mode: validate Eventbrite key and use cron scheduler
+      const eventbriteKey = process.env['EVENTBRITE_API_KEY'];
+      if (!eventbriteKey) {
+        throw new Error('Missing required environment variable: EVENTBRITE_API_KEY');
+      }
 
-    // Register Eventbrite source
-    const eventbriteSource = new EventbriteSource();
-    scheduler.registerSource(eventbriteSource);
+      const supabase = createServiceClient(storage.url, storage.key);
+      logger.info('Supabase client created');
 
-    // Scraper sources can be added via configuration:
-    // const scraperSource = new ScraperSource('https://example.com/events', { ... });
-    // scheduler.registerSource(scraperSource);
+      const scheduler = new Scheduler(supabase);
+      const eventbriteSource = new EventbriteSource();
+      scheduler.registerSource(eventbriteSource);
+      scheduler.start(regions);
 
-    // Start the scheduler
-    scheduler.start(regions);
+      logger.info('NightPulse Pipeline running (Supabase mode)');
+    } else {
+      // JSON mode: use JSON store callback with scheduler
+      logger.info({ outputPath: storage.outputPath }, 'JSON fallback mode active');
 
-    logger.info('NightPulse Pipeline running');
+      const jsonStoreFn = async (events: Parameters<typeof upsertEventsToJson>[0]) =>
+        upsertEventsToJson(events, storage.outputPath);
+
+      const scheduler = new Scheduler(null, jsonStoreFn);
+
+      // Only register Eventbrite if API key is available
+      const eventbriteKey = process.env['EVENTBRITE_API_KEY'];
+      if (eventbriteKey) {
+        const eventbriteSource = new EventbriteSource();
+        scheduler.registerSource(eventbriteSource);
+      } else {
+        logger.warn('No EVENTBRITE_API_KEY set. No sources registered.');
+      }
+
+      scheduler.start(regions);
+      logger.info('NightPulse Pipeline running (JSON fallback mode)');
+    }
   } catch (error: unknown) {
     logger.fatal({ error }, 'Pipeline failed to start');
     process.exit(1);
