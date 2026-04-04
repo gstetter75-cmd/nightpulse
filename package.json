@@ -14,9 +14,18 @@
     "dev:pipeline": "npm run dev -w @nightpulse/pipeline",
     "dev:frontend": "npm run dev -w @nightpulse/frontend",
     "test": "npm run test --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present"
+    "lint": "eslint packages/*/src/",
+    "format": "prettier --write packages/*/src/",
+    "format:check": "prettier --check packages/*/src/"
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "typescript-eslint": "^8.58.0"
   }
 }

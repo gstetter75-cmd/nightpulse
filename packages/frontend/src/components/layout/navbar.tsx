@@ -3,6 +3,7 @@
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 
 const NAV_LINKS = [
   { href: '/events', label: 'Events' },
@@ -25,7 +26,7 @@ export function Navbar() {
         className={[
           'fixed top-0 left-0 right-0 z-50 transition-colors duration-300',
           isScrolled
-            ? 'bg-[#0a0a0f]/80 backdrop-blur-2xl border-b border-white/5'
+            ? 'bg-[var(--dark-bg)]/80 backdrop-blur-2xl border-b border-[var(--glass-border)]'
             : 'bg-transparent',
         ].join(' ')}
         initial={{ y: -80 }}
@@ -44,33 +45,37 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-white/70 hover:text-white transition-colors group"
+                className="relative text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            aria-label="Toggle menu"
-          >
+          {/* Mobile: theme toggle + hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen((v) => !v)}
+              className="flex flex-col gap-1.5 p-2"
+              aria-label="Toggle menu"
+            >
             <motion.span
-              className="block w-6 h-0.5 bg-white"
+              className="block w-6 h-0.5 bg-[var(--text-primary)]"
               animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
             />
             <motion.span
-              className="block w-6 h-0.5 bg-white"
+              className="block w-6 h-0.5 bg-[var(--text-primary)]"
               animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
             />
             <motion.span
-              className="block w-6 h-0.5 bg-white"
+              className="block w-6 h-0.5 bg-[var(--text-primary)]"
               animate={mobileOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
             />
-          </button>
+            </button>
+          </div>
         </nav>
       </motion.header>
 
@@ -90,7 +95,7 @@ export function Navbar() {
             />
             {/* Panel */}
             <motion.div
-              className="absolute top-16 right-0 w-64 bg-[var(--dark-surface)]/95 backdrop-blur-xl border-l border-white/5 h-[calc(100vh-4rem)]"
+              className="absolute top-16 right-0 w-64 bg-[var(--dark-surface)]/95 backdrop-blur-xl border-l border-[var(--glass-border)] h-[calc(100vh-4rem)]"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -102,7 +107,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-lg text-white/80 hover:text-white transition-colors"
+                    className="text-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                   >
                     {link.label}
                   </Link>

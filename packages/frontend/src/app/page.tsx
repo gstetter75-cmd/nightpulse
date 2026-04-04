@@ -141,7 +141,7 @@ export default function HomePage() {
 
   const weekendEvents = getWeekendEvents(allEvents);
   const featuredEvents = getFeaturedEvents(allEvents, 3);
-  const previewEvents = allEvents.slice(0, 6);
+  const _previewEvents = allEvents.slice(0, 6);
 
   return (
     <div className="relative">

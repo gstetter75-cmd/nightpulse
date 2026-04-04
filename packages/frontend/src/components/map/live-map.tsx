@@ -44,7 +44,8 @@ export function LiveMap({ events, onMarkerClick, className = '', zoom: controlle
     if (controlledZoom !== undefined && controlledZoom !== viewState.zoom) {
       setViewState((prev) => ({ ...prev, zoom: controlledZoom }));
     }
-  }, [controlledZoom]); // eslint-disable-line react-hooks/exhaustive-deps
+  // intentionally omitting viewState.zoom to avoid infinite loop
+  }, [controlledZoom]);
 
   const [bounds, setBounds] = useState<MapBounds | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);

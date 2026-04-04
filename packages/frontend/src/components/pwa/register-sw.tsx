@@ -13,7 +13,6 @@ export function RegisterServiceWorker() {
         .register('/nightpulse/sw.js')
         .catch((error: unknown) => {
           if (process.env.NODE_ENV === 'development') {
-            // eslint-disable-next-line no-console
             console.warn('SW registration failed:', error);
           }
         });

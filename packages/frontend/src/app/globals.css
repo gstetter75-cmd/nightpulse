@@ -11,6 +11,19 @@
   --dark-surface: #12121a;
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Light Theme ─── */
+[data-theme="light"] {
+  --dark-bg: #f5f5f7;
+  --dark-surface: #ffffff;
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --text-primary: #111827;
+  --text-secondary: rgba(17, 24, 39, 0.7);
+  color-scheme: light;
 }
 
 /* ─── Base ─── */
@@ -21,13 +34,19 @@ html {
 
 body {
   background-color: var(--dark-bg);
-  color: white;
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background: rgba(168, 85, 247, 0.4);
   color: white;
+}
+
+[data-theme="light"] ::selection {
+  background: rgba(168, 85, 247, 0.25);
+  color: #111827;
 }
 
 /* ─── Scrollbar ─── */
@@ -45,6 +64,16 @@ body {
   background: rgba(168, 85, 247, 0.5);
 }
 
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f0f0f2;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.25);
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.45);
+}
+
 /* ─── Glass Utility ─── */
 .glass {
   background: var(--glass-bg);
@@ -53,12 +82,28 @@ body {
   border: 1px solid var(--glass-border);
 }
 
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
 /* ─── Glass Heavy ─── */
 .glass-heavy {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="light"] .glass-heavy {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 /* ─── Noise Overlay ─── */
@@ -229,6 +274,15 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+[data-theme="light"] .gradient-text {
+  background: linear-gradient(135deg, #7c3aed, #db2777, #0891b2, #2563eb, #7c3aed);
+  background-size: 300% 300%;
+  animation: gradient-shift 6s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ─── Shimmer Skeleton ─── */
 .skeleton {
   background: linear-gradient(
@@ -239,6 +293,63 @@ body {
   );
   background-size: 400% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
+}
+
+[data-theme="light"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.08) 50%,
+    rgba(0, 0, 0, 0.04) 75%
+  );
+  background-size: 400% 100%;
+}
+
+/* ─── Light Theme: Glow Utilities ─── */
+[data-theme="light"] .glow-purple {
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.15), 0 0 48px rgba(168, 85, 247, 0.05);
+}
+[data-theme="light"] .glow-pink {
+  box-shadow: 0 0 16px rgba(236, 72, 153, 0.15), 0 0 48px rgba(236, 72, 153, 0.05);
+}
+[data-theme="light"] .glow-blue {
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.15), 0 0 48px rgba(59, 130, 246, 0.05);
+}
+[data-theme="light"] .glow-cyan {
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.15), 0 0 48px rgba(6, 182, 212, 0.05);
+}
+
+/* ─── Light Theme: Text Glow ─── */
+[data-theme="light"] .text-glow {
+  text-shadow:
+    0 0 7px rgba(168, 85, 247, 0.3),
+    0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+/* ─── Light Theme: Noise Overlay ─── */
+[data-theme="light"] .noise-overlay::before {
+  opacity: 0.02;
+}
+
+/* ─── Light Theme: Card Shine ─── */
+[data-theme="light"] .card-shine::after {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(0, 0, 0, 0.02) 45%,
+    rgba(0, 0, 0, 0.04) 50%,
+    rgba(0, 0, 0, 0.02) 55%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+}
+
+/* ─── Light Theme: Animated Border ─── */
+[data-theme="light"] .animated-border {
+  background:
+    linear-gradient(var(--dark-surface), var(--dark-surface)) padding-box,
+    conic-gradient(from var(--border-angle), #7c3aed, #db2777, #0891b2, #7c3aed) border-box;
 }
 
 /* ─── Reduced Motion ─── */
