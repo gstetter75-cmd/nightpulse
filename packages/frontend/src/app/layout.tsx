@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { GradientMesh } from '@/components/effects/gradient-mesh';
 import { ToastProvider } from '@/components/ui/toast';
+import { RegisterServiceWorker } from '@/components/pwa/register-sw';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -13,10 +14,22 @@ export const metadata: Metadata = {
   description:
     'Finde die besten Events und Clubs in deiner Nähe. Echtzeit Event-Discovery mit interaktiver Karte.',
   keywords: ['Events', 'Nightlife', 'Berlin', 'Clubs', 'Techno', 'Parties'],
+  manifest: '/nightpulse/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'NightPulse',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+  },
   openGraph: {
     title: 'NightPulse - Entdecke die Nacht',
     description: 'Finde Events. Spüre den Vibe. Live.',
     type: 'website',
+  },
+  icons: {
+    apple: '/nightpulse/icons/icon.svg',
   },
 };
 
@@ -27,7 +40,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={inter.variable}>
+      <head>
+        <meta name="theme-color" content="#a855f7" />
+      </head>
       <body className="bg-[#0a0a0f] text-white antialiased font-[family-name:var(--font-inter)]">
+        <RegisterServiceWorker />
         <ToastProvider>
           {/* Global animated background */}
           <GradientMesh className="fixed inset-0 z-0" opacity={0.15} />

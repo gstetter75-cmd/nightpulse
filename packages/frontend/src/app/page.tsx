@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import type { DbEvent } from '@nightpulse/shared';
 import { ParticleBackground } from '@/components/effects/particle-background';
 import { AnimatedGradient } from '@/components/effects/animated-gradient';
 import { ParallaxSection } from '@/components/effects/parallax-section';
@@ -10,8 +11,15 @@ import { AnimatedText } from '@/components/ui/animated-text';
 import { GlowButton } from '@/components/ui/glow-button';
 import { GlassCard } from '@/components/ui/glass-card';
 import { EventList } from '@/components/events/event-list';
+import { EventCarousel } from '@/components/events/event-carousel';
+import { FeaturedCard } from '@/components/events/featured-card';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 import { DEMO_EVENTS } from '@/lib/demo-events';
+import {
+  getEventsForTimeRange,
+  getWeekendEvents,
+  getFeaturedEvents,
+} from '@/lib/event-filters';
 
 /* ─── Animated Counter ─── */
 
@@ -89,10 +97,51 @@ const STATS = [
   { value: 24, suffix: '/7', label: 'Updates' },
 ] as const;
 
+/* ─── Live Indicator Dot ─── */
+
+function LiveDot() {
+  return (
+    <span className="relative inline-flex h-3 w-3 mr-3">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+    </span>
+  );
+}
+
 /* ─── Page ─── */
 
 export default function HomePage() {
-  const previewEvents = DEMO_EVENTS.slice(0, 6);
+  const [allEvents, setAllEvents] = useState<readonly DbEvent[]>(DEMO_EVENTS);
+
+  // Try to load generated events from /data/events.json, fall back to DEMO_EVENTS
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch('/data/events.json', { signal: controller.signal })
+      .then((res) => {
+        if (!res.ok) throw new Error('Not found');
+        return res.json();
+      })
+      .then((data: DbEvent[]) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setAllEvents(data);
+        }
+      })
+      .catch(() => {
+        // Fall back to demo events - already set as default
+      });
+    return () => controller.abort();
+  }, []);
+
+  // Curated sections
+  const tonightEvents = getEventsForTimeRange(allEvents, 12);
+  const tomorrowEvents = getEventsForTimeRange(allEvents, 24);
+  const showTonight = tonightEvents.length > 0;
+  const heroSectionEvents = showTonight ? tonightEvents : tomorrowEvents;
+  const heroSectionTitle = showTonight ? 'Heute Nacht' : 'Morgen';
+
+  const weekendEvents = getWeekendEvents(allEvents);
+  const featuredEvents = getFeaturedEvents(allEvents, 3);
+  const previewEvents = allEvents.slice(0, 6);
 
   return (
     <div className="relative">
@@ -200,32 +249,93 @@ export default function HomePage() {
       {/* Section divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-pink-500/30 to-transparent" />
 
-      {/* ════════ Events Preview ════════ */}
-      <section className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedText
-            text="Nächste Events"
-            as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16"
-            gradient
-            mode="slide-up"
-          />
+      {/* ════════ Heute Nacht / Morgen Carousel ════════ */}
+      {heroSectionEvents.length > 0 && (
+        <section className="py-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="flex items-center justify-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              {showTonight && <LiveDot />}
+              <AnimatedText
+                text={heroSectionTitle}
+                as="h2"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold"
+                gradient
+                mode="slide-up"
+              />
+            </motion.div>
 
-          <EventList events={previewEvents} />
+            <EventCarousel events={heroSectionEvents} />
 
-          <motion.div
-            className="text-center mt-12"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <GlowButton href="/events" size="lg">
-              Alle Events
-            </GlowButton>
-          </motion.div>
-        </div>
-      </section>
+            <motion.div
+              className="text-center mt-12"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <GlowButton href="/events" size="lg">
+                Alle Events
+              </GlowButton>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* Section divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+
+      {/* ════════ Beliebt (Featured) ════════ */}
+      {featuredEvents.length > 0 && (
+        <section className="py-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <AnimatedText
+              text="Beliebt"
+              as="h2"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16"
+              gradient
+              mode="slide-up"
+            />
+
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {featuredEvents.map((event, index) => (
+                <FeaturedCard key={event.id} event={event} index={index} />
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* Section divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-pink-500/20 to-transparent" />
+
+      {/* ════════ Dieses Wochenende ════════ */}
+      {weekendEvents.length > 0 && (
+        <section className="py-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <AnimatedText
+              text="Dieses Wochenende"
+              as="h2"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16"
+              gradient
+              mode="slide-up"
+            />
+
+            <EventList events={weekendEvents} />
+          </div>
+        </section>
+      )}
 
       {/* Section divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
