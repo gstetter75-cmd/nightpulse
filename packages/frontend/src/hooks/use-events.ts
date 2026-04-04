@@ -70,10 +70,15 @@ function filterEventsClientSide(
   return filtered;
 }
 
+/** Get the base path for static assets */
+function getBasePath(): string {
+  return process.env.NEXT_PUBLIC_BASE_PATH || '';
+}
+
 /** Try to fetch events from the static JSON file */
 async function fetchJsonEvents(): Promise<readonly DbEvent[] | null> {
   try {
-    const response = await fetch('/data/events.json');
+    const response = await fetch(`${getBasePath()}/data/events.json`);
     if (!response.ok) return null;
     const data: unknown = await response.json();
     if (!Array.isArray(data)) return null;

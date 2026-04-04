@@ -388,7 +388,8 @@ export default function HomePage() {
   // Try to load generated events from /data/events.json, fall back to DEMO_EVENTS
   useEffect(() => {
     const controller = new AbortController();
-    fetch('/data/events.json', { signal: controller.signal })
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    fetch(`${basePath}/data/events.json`, { signal: controller.signal })
       .then((res) => {
         if (!res.ok) throw new Error('Not found');
         return res.json();
