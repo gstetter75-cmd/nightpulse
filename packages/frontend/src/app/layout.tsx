@@ -7,6 +7,8 @@ import { GradientMesh } from '@/components/effects/gradient-mesh';
 import { ToastProvider } from '@/components/ui/toast';
 import { RegisterServiceWorker } from '@/components/pwa/register-sw';
 import { ThemeProvider } from '@/components/theme/theme-provider';
+import { CityProvider } from '@/components/city/city-provider';
+import { CityGate } from '@/components/city/city-gate';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -48,17 +50,21 @@ export default function RootLayout({
         <ThemeProvider>
           <RegisterServiceWorker />
           <ToastProvider>
-            {/* Global animated background */}
-            <GradientMesh className="fixed inset-0 z-0" opacity={0.15} />
+            <CityProvider>
+              <CityGate>
+                {/* Global animated background */}
+                <GradientMesh className="fixed inset-0 z-0" opacity={0.15} />
 
-            {/* Navigation */}
-            <Navbar />
+                {/* Navigation */}
+                <Navbar />
 
-            {/* Main content */}
-            <main className="relative z-10">{children}</main>
+                {/* Main content */}
+                <main className="relative z-10">{children}</main>
 
-            {/* Footer */}
-            <Footer />
+                {/* Footer */}
+                <Footer />
+              </CityGate>
+            </CityProvider>
           </ToastProvider>
         </ThemeProvider>
       </body>

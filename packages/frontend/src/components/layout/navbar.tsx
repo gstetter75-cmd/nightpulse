@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-
 import Link from 'next/link';
 import { useState } from 'react';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { CitySwitcher } from '@/components/city/city-switcher';
 
 const NAV_LINKS = [
   { href: '/events', label: 'Events' },
@@ -34,10 +35,13 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="text-2xl font-bold gradient-text">
-            NightPulse
-          </Link>
+          {/* Logo + City */}
+          <div className="flex items-center gap-3">
+            <Link href="/" className="text-2xl font-bold gradient-text">
+              NightPulse
+            </Link>
+            <CitySwitcher />
+          </div>
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">

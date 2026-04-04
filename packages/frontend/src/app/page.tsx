@@ -20,6 +20,7 @@ import {
   getWeekendEvents,
   getFeaturedEvents,
 } from '@/lib/event-filters';
+import { useCityContext } from '@/components/city/city-provider';
 
 /* ─── Animated Counter ─── */
 
@@ -111,6 +112,7 @@ function LiveDot() {
 /* ─── Page ─── */
 
 export default function HomePage() {
+  const { city } = useCityContext();
   const [allEvents, setAllEvents] = useState<readonly DbEvent[]>(DEMO_EVENTS);
 
   // Try to load generated events from /data/events.json, fall back to DEMO_EVENTS
@@ -137,7 +139,8 @@ export default function HomePage() {
   const tomorrowEvents = getEventsForTimeRange(allEvents, 24);
   const showTonight = tonightEvents.length > 0;
   const heroSectionEvents = showTonight ? tonightEvents : tomorrowEvents;
-  const heroSectionTitle = showTonight ? 'Heute Nacht' : 'Morgen';
+  const cityLabel = city ? ` in ${city.name}` : '';
+  const heroSectionTitle = showTonight ? `Heute Nacht${cityLabel}` : `Morgen${cityLabel}`;
 
   const weekendEvents = getWeekendEvents(allEvents);
   const featuredEvents = getFeaturedEvents(allEvents, 3);
@@ -177,7 +180,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Finde Events. Spüre den Vibe. Live.
+            {city ? `Finde Events in ${city.name}. Sp\u00FCre den Vibe. Live.` : 'Finde Events. Sp\u00FCre den Vibe. Live.'}
           </motion.p>
 
           <motion.div

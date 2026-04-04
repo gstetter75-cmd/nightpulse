@@ -1,7 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { DEFAULT_CENTER } from '@nightpulse/shared';
+import { useCityContext } from '@/components/city/city-provider';
 
 interface GeolocationState {
   readonly lat: number;
@@ -15,12 +16,33 @@ interface UseGeolocationReturn extends GeolocationState {
 }
 
 export function useGeolocation(): UseGeolocationReturn {
+  const { city } = useCityContext();
+
+  const defaultCenter = useMemo(
+    () =>
+      city
+        ? { lat: city.lat, lng: city.lng }
+        : { lat: DEFAULT_CENTER.lat, lng: DEFAULT_CENTER.lng },
+    [city],
+  );
+
   const [state, setState] = useState<GeolocationState>({
-    lat: DEFAULT_CENTER.lat,
-    lng: DEFAULT_CENTER.lng,
+    lat: defaultCenter.lat,
+    lng: defaultCenter.lng,
     loading: true,
     error: null,
   });
+
+  // Update defaults when city changes
+  useEffect(() => {
+    setState((prev) => {
+      // Only update if still at previous default (browser geo hasn't overridden)
+      if (prev.error || prev.loading) {
+        return { ...prev, lat: defaultCenter.lat, lng: defaultCenter.lng };
+      }
+      return prev;
+    });
+  }, [defaultCenter]);
 
   const locate = useCallback(() => {
     if (typeof window === 'undefined' || !navigator.geolocation) {
@@ -45,15 +67,15 @@ export function useGeolocation(): UseGeolocationReturn {
       },
       (err) => {
         setState({
-          lat: DEFAULT_CENTER.lat,
-          lng: DEFAULT_CENTER.lng,
+          lat: defaultCenter.lat,
+          lng: defaultCenter.lng,
           loading: false,
           error: err.message,
         });
       },
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
     );
-  }, []);
+  }, [defaultCenter]);
 
   useEffect(() => {
     locate();
