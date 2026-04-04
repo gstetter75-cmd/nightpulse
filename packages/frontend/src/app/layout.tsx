@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { GradientMesh } from '@/components/effects/gradient-mesh';
+import { CursorGlow } from '@/components/effects/cursor-glow';
 import { ToastProvider } from '@/components/ui/toast';
 import { RegisterServiceWorker } from '@/components/pwa/register-sw';
 import { ThemeProvider } from '@/components/theme/theme-provider';
@@ -54,6 +55,9 @@ export default function RootLayout({
               <CityGate>
                 {/* Global animated background */}
                 <GradientMesh className="fixed inset-0 z-0" opacity={0.15} />
+
+                {/* Cursor glow effect */}
+                <CursorGlow />
 
                 {/* Navigation */}
                 <Navbar />

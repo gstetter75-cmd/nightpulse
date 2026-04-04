@@ -26,6 +26,19 @@ const CATEGORY_COLORS: Record<string, string> = {
   OTHER: 'from-slate-500 to-gray-600',
 };
 
+const CATEGORY_GLOW_COLORS: Record<string, string> = {
+  TECHNO: 'rgba(168, 85, 247, 0.6)',
+  HOUSE: 'rgba(236, 72, 153, 0.6)',
+  HIPHOP: 'rgba(245, 158, 11, 0.6)',
+  LATIN: 'rgba(239, 68, 68, 0.6)',
+  JAZZ: 'rgba(59, 130, 246, 0.6)',
+  ROCK: 'rgba(107, 114, 128, 0.6)',
+  POP: 'rgba(6, 182, 212, 0.6)',
+  ELECTRONIC: 'rgba(139, 92, 246, 0.6)',
+  MIXED: 'rgba(16, 185, 129, 0.6)',
+  OTHER: 'rgba(100, 116, 139, 0.6)',
+};
+
 function formatDate(dateStr: string): string {
   try {
     const date = new Date(dateStr);
@@ -77,6 +90,7 @@ function LocationIcon() {
 
 export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
   const categoryGradient = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS.OTHER;
+  const categoryGlow = CATEGORY_GLOW_COLORS[event.category] ?? CATEGORY_GLOW_COLORS.OTHER;
 
   return (
     <motion.div
@@ -87,7 +101,7 @@ export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
       transition={{ delay: index * 0.1 }}
     >
       <Link href={`/events/${event.id}`}>
-        <GlassCard glowColor="purple" className="group cursor-pointer h-full hover-gradient-border">
+        <GlassCard glowColor="purple" className="group cursor-pointer h-full event-card-upgraded">
           {/* Image */}
           <div className="relative h-48 overflow-hidden">
             {event.imageUrl ? (
@@ -118,10 +132,14 @@ export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
               </div>
             )}
 
-            {/* Category badge */}
+            {/* Category badge with pulsing glow */}
             <div className="absolute bottom-3 left-3">
               <span
-                className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${categoryGradient} text-white`}
+                className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${categoryGradient} text-white event-category-badge`}
+                style={{
+                  boxShadow: `0 0 8px ${categoryGlow}, 0 0 16px ${categoryGlow}`,
+                  animation: 'category-pulse 2.5s ease-in-out infinite',
+                }}
               >
                 {event.category}
               </span>
@@ -130,7 +148,7 @@ export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
 
           {/* Content */}
           <div className="p-5 space-y-2">
-            <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors line-clamp-1">
+            <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors line-clamp-1 event-title-glitch">
               {event.title}
             </h3>
             <p className="text-sm text-white/50 flex items-center">
@@ -143,23 +161,80 @@ export function EventCard({ event, isNew = false, index = 0 }: EventCardProps) {
             </p>
             <div className="pt-2">
               {event.price ? (
-                <span className="text-sm font-semibold text-purple-400">{event.price}</span>
+                <span className="text-sm font-semibold text-purple-400 event-price-badge">
+                  {event.price}
+                </span>
               ) : (
-                <span className="text-sm font-semibold text-emerald-400">Free</span>
+                <span
+                  className="text-sm font-bold text-emerald-400 event-price-badge-free"
+                  style={{
+                    textShadow: '0 0 10px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.3)',
+                  }}
+                >
+                  Free
+                </span>
               )}
             </div>
           </div>
 
-          {/* Animated gradient border on hover */}
+          {/* Animated gradient line at bottom */}
           <div
-            className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            className="absolute bottom-0 inset-x-0 h-[2px] pointer-events-none event-bottom-line"
             style={{
-              background:
-                'linear-gradient(var(--dark-surface), var(--dark-surface)) padding-box, conic-gradient(from var(--border-angle, 0deg), #a855f7, #ec4899, #06b6d4, #a855f7) border-box',
-              border: '1px solid transparent',
-              animation: 'spin-border 4s linear infinite',
+              background: 'linear-gradient(90deg, transparent, #a855f7, #ec4899, #06b6d4, #a855f7, transparent)',
+              backgroundSize: '200% 100%',
+              opacity: 0,
+              transition: 'opacity 0.4s ease',
+              animation: 'gradient-flow 3s linear infinite',
             }}
           />
+
+          {/* Electric border effect on hover */}
+          <div
+            className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 event-electric-border"
+            style={{
+              background:
+                'linear-gradient(var(--dark-surface, #0a0a0f), var(--dark-surface, #0a0a0f)) padding-box, conic-gradient(from var(--border-angle, 0deg), #a855f7, #ec4899, #06b6d4, #a855f7) border-box',
+              border: '1px solid transparent',
+              animation: 'spin-border 3s linear infinite',
+            }}
+          />
+
+          {/* Inline styles for event card effects */}
+          <style jsx>{`
+            @keyframes category-pulse {
+              0%, 100% { box-shadow: 0 0 8px ${categoryGlow}, 0 0 16px ${categoryGlow}; }
+              50% { box-shadow: 0 0 14px ${categoryGlow}, 0 0 28px ${categoryGlow}; }
+            }
+            @keyframes gradient-flow {
+              0% { background-position: -200% 0; }
+              100% { background-position: 200% 0; }
+            }
+            .event-card-upgraded:hover .event-bottom-line {
+              opacity: 1;
+            }
+            .event-card-upgraded:hover .event-title-glitch {
+              animation: glitch-text 0.3s ease-in-out;
+            }
+            @keyframes glitch-text {
+              0% { text-shadow: none; }
+              20% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+              40% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+              60% { text-shadow: -1px 0 #ff00ff, 1px 0 #00ffff; }
+              80% { text-shadow: 1px 0 #ff00ff, -1px 0 #00ffff; }
+              100% { text-shadow: none; }
+            }
+            .event-price-badge {
+              text-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+            }
+            .event-price-badge-free {
+              animation: free-glow 2s ease-in-out infinite;
+            }
+            @keyframes free-glow {
+              0%, 100% { text-shadow: 0 0 10px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.3); }
+              50% { text-shadow: 0 0 16px rgba(16, 185, 129, 0.7), 0 0 32px rgba(16, 185, 129, 0.4); }
+            }
+          `}</style>
         </GlassCard>
       </Link>
     </motion.div>
