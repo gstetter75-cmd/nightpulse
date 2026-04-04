@@ -40,6 +40,16 @@
     "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
+    "id": "about-blank-berlin",
+    "name": "About Blank",
+    "address": "Markgrafendamm 24c, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.5068,
+    "lng": 13.4585,
+    "website": "https://aboutblank.li",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
     "id": "sisyphos-berlin",
     "name": "Sisyphos",
     "address": "Hauptstr. 15, 10317 Berlin",
@@ -47,7 +57,7 @@
     "lat": 52.493,
     "lng": 13.4992,
     "website": "https://sisyphos-berlin.net",
-    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
   },
   {
     "id": "kater-blau-berlin",
@@ -57,17 +67,57 @@
     "lat": 52.5112,
     "lng": 13.4265,
     "website": "https://katerblau.de",
-    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
   },
   {
-    "id": "about-blank-berlin",
-    "name": "About Blank",
+    "id": "ritter-butzke-berlin",
+    "name": "Ritter Butzke",
+    "address": "Ritterstr. 26, 10969 Berlin",
+    "city": "Berlin",
+    "lat": 52.5035,
+    "lng": 13.4095,
+    "website": "https://rfrsh.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "-about-blank-berlin",
+    "name": "://about blank",
     "address": "Markgrafendamm 24c, 10245 Berlin",
     "city": "Berlin",
-    "lat": 52.5068,
-    "lng": 13.4585,
+    "lat": 52.5069,
+    "lng": 13.4586,
     "website": "https://aboutblank.li",
-    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "wilde-renate-berlin",
+    "name": "Wilde Renate",
+    "address": "Alt-Stralau 70, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.4965,
+    "lng": 13.467,
+    "website": "https://renfrsh.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "ohm-berlin",
+    "name": "OHM",
+    "address": "Köpenicker Str. 70, 10179 Berlin",
+    "city": "Berlin",
+    "lat": 52.5097,
+    "lng": 13.4198,
+    "website": "https://ohmberlin.com",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "griessmuehle-berlin",
+    "name": "Griessmuehle",
+    "address": "Sonnenallee 221, 12059 Berlin",
+    "city": "Berlin",
+    "lat": 52.4728,
+    "lng": 13.4575,
+    "website": "https://griessmuehle.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
   },
   {
     "id": "rso-berlin-berlin",
@@ -77,7 +127,77 @@
     "lat": 52.5055,
     "lng": 13.461,
     "website": "https://rso.berlin",
-    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "salon-zur-wilden-renate-berlin",
+    "name": "Salon zur Wilden Renate",
+    "address": "Alt-Stralau 70, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.4966,
+    "lng": 13.4672,
+    "website": "https://renfrsh.de",
+    "imageUrl": "https://images.unsplash.com/photo-1598387993281-d5629f206ef9?w=800"
+  },
+  {
+    "id": "prince-charles-berlin",
+    "name": "Prince Charles",
+    "address": "Prinzenstr. 85F, 10969 Berlin",
+    "city": "Berlin",
+    "lat": 52.502,
+    "lng": 13.41,
+    "website": "https://princecharlesberlin.com",
+    "imageUrl": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800"
+  },
+  {
+    "id": "holzmarkt-berlin",
+    "name": "Holzmarkt",
+    "address": "Holzmarktstr. 25, 10243 Berlin",
+    "city": "Berlin",
+    "lat": 52.5115,
+    "lng": 13.427,
+    "website": "https://holzmarkt.com",
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
+  },
+  {
+    "id": "golden-gate-berlin",
+    "name": "Golden Gate",
+    "address": "Schicklerstr. 4, 10179 Berlin",
+    "city": "Berlin",
+    "lat": 52.514,
+    "lng": 13.411,
+    "website": "https://goldengate-berlin.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
+  },
+  {
+    "id": "matrix-berlin",
+    "name": "Matrix",
+    "address": "Warschauer Platz 18, 10245 Berlin",
+    "city": "Berlin",
+    "lat": 52.506,
+    "lng": 13.4495,
+    "website": "https://matrixberlin.de",
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+  },
+  {
+    "id": "sage-club-berlin",
+    "name": "Sage Club",
+    "address": "Köpenicker Str. 76, 10179 Berlin",
+    "city": "Berlin",
+    "lat": 52.5094,
+    "lng": 13.4188,
+    "website": "https://sage-club.de",
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+  },
+  {
+    "id": "anomalie-berlin",
+    "name": "Anomalie",
+    "address": "Storkower Str. 123, 10407 Berlin",
+    "city": "Berlin",
+    "lat": 52.529,
+    "lng": 13.451,
+    "website": "https://anomalie-berlin.de",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
   },
   {
     "id": "molotow-hamburg",
@@ -87,7 +207,7 @@
     "lat": 53.5497,
     "lng": 9.9586,
     "website": "https://molotowclub.com",
-    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "uebel-gef-hrlich-hamburg",
@@ -97,7 +217,7 @@
     "lat": 53.556,
     "lng": 9.9672,
     "website": "https://uebelundgefaehrlich.com",
-    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "pal-hamburg",
@@ -107,7 +227,7 @@
     "lat": 53.5792,
     "lng": 9.9725,
     "website": "https://pal-hamburg.com",
-    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "gruenspan-hamburg",
@@ -117,7 +237,7 @@
     "lat": 53.5512,
     "lng": 9.9574,
     "website": "https://gruenspan.de",
-    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
     "id": "nochtspeicher-hamburg",
@@ -127,7 +247,7 @@
     "lat": 53.5467,
     "lng": 9.9596,
     "website": "https://nochtspeicher.de",
-    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
   },
   {
     "id": "hafenklang-hamburg",
@@ -137,7 +257,97 @@
     "lat": 53.5441,
     "lng": 9.9477,
     "website": "https://hafenklang.de",
-    "imageUrl": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "fundbureau-hamburg",
+    "name": "Fundbureau",
+    "address": "Stresemannstr. 114, 22769 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.558,
+    "lng": 9.953,
+    "website": "https://fundbureau.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "kleiner-donner-hamburg",
+    "name": "Kleiner Donner",
+    "address": "Kleine Rainstr. 11, 22765 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.553,
+    "lng": 9.949,
+    "website": "https://kleinerdonner.com",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "baalsaal-hamburg",
+    "name": "Baalsaal",
+    "address": "Reeperbahn 25, 20359 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.5495,
+    "lng": 9.9618,
+    "website": "https://baalsaal.com",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "mojo-club-hamburg",
+    "name": "Mojo Club",
+    "address": "Reeperbahn 1, 20359 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.5493,
+    "lng": 9.9635,
+    "website": "https://mojo.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "cascadas-hamburg",
+    "name": "Cascadas",
+    "address": "Ferdinandstr. 12, 20095 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.553,
+    "lng": 9.999,
+    "website": "https://cascadas.de",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "prinzenbar-hamburg",
+    "name": "Prinzenbar",
+    "address": "Kastanienallee 20, 20359 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.55,
+    "lng": 9.961,
+    "website": "https://prinzenbar.com",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
+    "id": "kukuun-hamburg",
+    "name": "Kukuun",
+    "address": "Spielbudenplatz 22, 20359 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.549,
+    "lng": 9.9625,
+    "website": "https://kukuun.com",
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "s-dpol-hamburg",
+    "name": "Südpol",
+    "address": "Süderstr. 112, 20097 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.545,
+    "lng": 10.02,
+    "website": "https://suedpol-hamburg.de",
+    "imageUrl": "https://images.unsplash.com/photo-1598387993281-d5629f206ef9?w=800"
+  },
+  {
+    "id": "waagenbau-hamburg",
+    "name": "Waagenbau",
+    "address": "Max-Brauer-Allee 204, 22769 Hamburg",
+    "city": "Hamburg",
+    "lat": 53.5615,
+    "lng": 9.9425,
+    "website": "https://waagenbau.com",
+    "imageUrl": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800"
   },
   {
     "id": "harry-klein-m-nchen",
@@ -147,7 +357,7 @@
     "lat": 48.1378,
     "lng": 11.5656,
     "website": "https://harrykleinclub.de",
-    "imageUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "blitz-club-m-nchen",
@@ -157,7 +367,7 @@
     "lat": 48.1299,
     "lng": 11.5838,
     "website": "https://blitz.club",
-    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "rote-sonne-m-nchen",
@@ -167,7 +377,7 @@
     "lat": 48.1417,
     "lng": 11.5695,
     "website": "https://rote-sonne.com",
-    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "p1-m-nchen",
@@ -177,7 +387,7 @@
     "lat": 48.1425,
     "lng": 11.587,
     "website": "https://p1-club.de",
-    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
     "id": "bob-beaman-m-nchen",
@@ -187,7 +397,7 @@
     "lat": 48.1393,
     "lng": 11.5655,
     "website": "https://bobbeaman.de",
-    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
   },
   {
     "id": "bahnw-rter-thiel-m-nchen",
@@ -197,7 +407,97 @@
     "lat": 48.127,
     "lng": 11.559,
     "website": "https://bahnwaerterthiel.de",
-    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "pacha-m-nchen-m-nchen",
+    "name": "Pacha München",
+    "address": "Maximiliansplatz 5, 80333 München",
+    "city": "München",
+    "lat": 48.1416,
+    "lng": 11.5693,
+    "website": "https://pachamunich.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "mma-club-m-nchen",
+    "name": "MMA Club",
+    "address": "Hans-Sachs-Str. 5, 80469 München",
+    "city": "München",
+    "lat": 48.131,
+    "lng": 11.573,
+    "website": "https://mma-club.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "backstage-m-nchen",
+    "name": "Backstage",
+    "address": "Reitknechtstr. 6, 80639 München",
+    "city": "München",
+    "lat": 48.152,
+    "lng": 11.536,
+    "website": "https://backstage.eu",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "charlie-m-nchen",
+    "name": "Charlie",
+    "address": "Maximiliansplatz 5, 80333 München",
+    "city": "München",
+    "lat": 48.1418,
+    "lng": 11.5697,
+    "website": "https://charlie-muenchen.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "cord-club-m-nchen",
+    "name": "Cord Club",
+    "address": "Sonnenstr. 18, 80331 München",
+    "city": "München",
+    "lat": 48.1375,
+    "lng": 11.564,
+    "website": "https://cord.club",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "registratur-m-nchen",
+    "name": "Registratur",
+    "address": "Blumenstr. 2, 80331 München",
+    "city": "München",
+    "lat": 48.1345,
+    "lng": 11.5715,
+    "website": "https://registratur-muenchen.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
+    "id": "kong-m-nchen",
+    "name": "Kong",
+    "address": "Maximiliansplatz 5, 80333 München",
+    "city": "München",
+    "lat": 48.1415,
+    "lng": 11.569,
+    "website": "https://kong-muenchen.de",
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "call-me-drella-m-nchen",
+    "name": "Call me Drella",
+    "address": "Maximiliansplatz 5, 80333 München",
+    "city": "München",
+    "lat": 48.1419,
+    "lng": 11.5698,
+    "website": "https://callmedrella.de",
+    "imageUrl": "https://images.unsplash.com/photo-1598387993281-d5629f206ef9?w=800"
+  },
+  {
+    "id": "crux-m-nchen",
+    "name": "Crux",
+    "address": "Entenbachstr. 67, 81541 München",
+    "city": "München",
+    "lat": 48.12,
+    "lng": 11.588,
+    "website": "https://crux-muenchen.de",
+    "imageUrl": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800"
   },
   {
     "id": "bootshaus-k-ln",
@@ -207,7 +507,7 @@
     "lat": 50.9569,
     "lng": 7.0148,
     "website": "https://bootshaus.tv",
-    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "gew-lbe-k-ln",
@@ -217,7 +517,7 @@
     "lat": 50.9412,
     "lng": 6.965,
     "website": "https://gewoelbe.club",
-    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "odonien-k-ln",
@@ -227,7 +527,7 @@
     "lat": 50.9504,
     "lng": 6.9218,
     "website": "https://odonien.de",
-    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "helios37-k-ln",
@@ -237,7 +537,7 @@
     "lat": 50.9508,
     "lng": 6.909,
     "website": "https://helios37.de",
-    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
     "id": "sensor-club-k-ln",
@@ -247,7 +547,107 @@
     "lat": 50.9238,
     "lng": 6.957,
     "website": "https://sensorclub.de",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "artheater-k-ln",
+    "name": "Artheater",
+    "address": "Ehrenfeldgürtel 127, 50823 Köln",
+    "city": "Köln",
+    "lat": 50.95,
+    "lng": 6.925,
+    "website": "https://artheater.de",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "jungle-club-k-ln",
+    "name": "Jungle Club",
+    "address": "Hohenstaufenring 29, 50674 Köln",
+    "city": "Köln",
+    "lat": 50.932,
+    "lng": 6.944,
+    "website": "https://jungle-club-koeln.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "subway-k-ln",
+    "name": "Subway",
+    "address": "Aachener Str. 82, 50674 Köln",
+    "city": "Köln",
+    "lat": 50.9365,
+    "lng": 6.936,
+    "website": "https://subway-koeln.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "cbe-k-ln",
+    "name": "CBE",
+    "address": "Bartholomäus-Schink-Str. 8, 50825 Köln",
+    "city": "Köln",
+    "lat": 50.948,
+    "lng": 6.92,
+    "website": "https://cbekoeln.de",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "essigfabrik-k-ln",
+    "name": "Essigfabrik",
+    "address": "Siegburger Str. 110, 50679 Köln",
+    "city": "Köln",
+    "lat": 50.934,
+    "lng": 6.978,
+    "website": "https://essigfabrik.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "yuca-k-ln",
+    "name": "Yuca",
+    "address": "Kyffhäuserstr. 28, 50674 Köln",
+    "city": "Köln",
+    "lat": 50.931,
+    "lng": 6.945,
+    "website": "https://yuca-koeln.de",
     "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "club-bahnhof-ehrenfeld-k-ln",
+    "name": "Club Bahnhof Ehrenfeld",
+    "address": "Bartholomäus-Schink-Str. 8, 50825 Köln",
+    "city": "Köln",
+    "lat": 50.9482,
+    "lng": 6.9205,
+    "website": "https://cbekoeln.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
+    "id": "heinz-gaul-k-ln",
+    "name": "Heinz Gaul",
+    "address": "Vogelsanger Str. 200, 50825 Köln",
+    "city": "Köln",
+    "lat": 50.949,
+    "lng": 6.915,
+    "website": "https://heinzgaul.de",
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "tsunami-club-k-ln",
+    "name": "Tsunami Club",
+    "address": "Im Ferkulum 9, 50678 Köln",
+    "city": "Köln",
+    "lat": 50.928,
+    "lng": 6.959,
+    "website": "https://tsunami-club.de",
+    "imageUrl": "https://images.unsplash.com/photo-1598387993281-d5629f206ef9?w=800"
+  },
+  {
+    "id": "blue-shell-k-ln",
+    "name": "Blue Shell",
+    "address": "Luxemburger Str. 32, 50674 Köln",
+    "city": "Köln",
+    "lat": 50.929,
+    "lng": 6.94,
+    "website": "https://blueshell.de",
+    "imageUrl": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800"
   },
   {
     "id": "robert-johnson-frankfurt",
@@ -257,7 +657,7 @@
     "lat": 50.1005,
     "lng": 8.7703,
     "website": "https://robert-johnson.de",
-    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "tanzhaus-west-frankfurt",
@@ -267,7 +667,7 @@
     "lat": 50.098,
     "lng": 8.641,
     "website": "https://tanzhaus-west.de",
-    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "silbergold-frankfurt",
@@ -277,7 +677,7 @@
     "lat": 50.0982,
     "lng": 8.6415,
     "website": "https://silbergold-ffm.de",
-    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "zoom-frankfurt",
@@ -287,7 +687,7 @@
     "lat": 50.1145,
     "lng": 8.6828,
     "website": "https://zoom-frankfurt.de",
-    "imageUrl": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
     "id": "monza-frankfurt",
@@ -297,7 +697,107 @@
     "lat": 50.1058,
     "lng": 8.6672,
     "website": "https://monza-club.de",
-    "imageUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "gibson-frankfurt",
+    "name": "Gibson",
+    "address": "Zeil 85-93, 60313 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.115,
+    "lng": 8.687,
+    "website": "https://gibson-club.de",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "batschkapp-frankfurt",
+    "name": "Batschkapp",
+    "address": "Gwinnerstr. 5, 60388 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.132,
+    "lng": 8.72,
+    "website": "https://batschkapp.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "velvet-club-frankfurt",
+    "name": "Velvet Club",
+    "address": "Weserstr. 17, 60329 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.107,
+    "lng": 8.662,
+    "website": "https://velvet-ffm.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "nachtleben-frankfurt",
+    "name": "Nachtleben",
+    "address": "Kurt-Schumacher-Str. 45, 60313 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.1135,
+    "lng": 8.6795,
+    "website": "https://nachtleben-ffm.de",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "adlib-frankfurt",
+    "name": "Adlib",
+    "address": "Gutleutstr. 294, 60327 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.0985,
+    "lng": 8.642,
+    "website": "https://adlib-ffm.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "king-kamehameha-frankfurt",
+    "name": "King Kamehameha",
+    "address": "Hanauer Landstr. 192, 60314 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.112,
+    "lng": 8.705,
+    "website": "https://king-ka.de",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "pik-dame-frankfurt",
+    "name": "Pik Dame",
+    "address": "Berger Str. 175, 60385 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.1235,
+    "lng": 8.702,
+    "website": "https://pikdame.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
+    "id": "dora-brilliant-frankfurt",
+    "name": "Dora Brilliant",
+    "address": "Hamburger Allee 45, 60486 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.118,
+    "lng": 8.655,
+    "website": "https://dorabrilliant.de",
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "u60311-frankfurt",
+    "name": "U60311",
+    "address": "Roßmarkt 16, 60311 Frankfurt",
+    "city": "Frankfurt",
+    "lat": 50.1128,
+    "lng": 8.6775,
+    "website": "https://u60311.de",
+    "imageUrl": "https://images.unsplash.com/photo-1598387993281-d5629f206ef9?w=800"
+  },
+  {
+    "id": "centralstation-frankfurt",
+    "name": "Centralstation",
+    "address": "Im Carree 1, 64283 Darmstadt",
+    "city": "Frankfurt",
+    "lat": 49.8715,
+    "lng": 8.6505,
+    "website": "https://centralstation.de",
+    "imageUrl": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800"
   },
   {
     "id": "salon-des-amateurs-d-sseldorf",
@@ -340,6 +840,86 @@
     "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
+    "id": "zakk-d-sseldorf",
+    "name": "Zakk",
+    "address": "Fichtenstr. 40, 40233 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.215,
+    "lng": 6.795,
+    "website": "https://zakk.de",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "stone-d-sseldorf",
+    "name": "Stone",
+    "address": "Bolkerstr. 11, 40213 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.2268,
+    "lng": 6.773,
+    "website": "https://stone-duesseldorf.de",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "rudas-studios-d-sseldorf",
+    "name": "Rudas Studios",
+    "address": "Birkenstr. 15, 40233 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.214,
+    "lng": 6.7935,
+    "website": "https://rudas-studios.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "sir-walter-d-sseldorf",
+    "name": "Sir Walter",
+    "address": "Heinrich-Heine-Allee 36, 40213 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.2255,
+    "lng": 6.777,
+    "website": "https://sirwalter.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "3001-d-sseldorf",
+    "name": "3001",
+    "address": "Franziusstr. 22, 40219 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.213,
+    "lng": 6.768,
+    "website": "https://3001-duesseldorf.de",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "stahlwerk-d-sseldorf",
+    "name": "Stahlwerk",
+    "address": "Ronsdorfer Str. 134, 40233 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.212,
+    "lng": 6.802,
+    "website": "https://stahlwerk.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "pretty-vacant-d-sseldorf",
+    "name": "Pretty Vacant",
+    "address": "Bilker Allee 128, 40219 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.217,
+    "lng": 6.773,
+    "website": "https://prettyvacant.de",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "cube-d-sseldorf",
+    "name": "Cube",
+    "address": "Charlottenstr. 18, 40210 Düsseldorf",
+    "city": "Düsseldorf",
+    "lat": 51.2225,
+    "lng": 6.787,
+    "website": "https://cube-duesseldorf.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
     "id": "climax-stuttgart",
     "name": "Climax",
     "address": "Theodor-Heuss-Str. 30, 70174 Stuttgart",
@@ -347,7 +927,7 @@
     "lat": 48.78,
     "lng": 9.176,
     "website": "https://climax-stuttgart.de",
-    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "kowalski-stuttgart",
@@ -357,7 +937,7 @@
     "lat": 48.7785,
     "lng": 9.168,
     "website": "https://kowalski-stuttgart.de",
-    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "romantica-stuttgart",
@@ -367,7 +947,7 @@
     "lat": 48.7695,
     "lng": 9.181,
     "website": "https://romantica-stuttgart.de",
-    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "white-noise-stuttgart",
@@ -377,7 +957,87 @@
     "lat": 48.7735,
     "lng": 9.1775,
     "website": "https://whitenoise-stuttgart.de",
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+  },
+  {
+    "id": "rocker-33-stuttgart",
+    "name": "Rocker 33",
+    "address": "Ludwigstr. 33, 70176 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.777,
+    "lng": 9.17,
+    "website": "https://rocker33.com",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "schocken-stuttgart",
+    "name": "Schocken",
+    "address": "Hirschstr. 36, 70173 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.775,
+    "lng": 9.179,
+    "website": "https://schocken.de",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "lehmann-club-stuttgart",
+    "name": "Lehmann Club",
+    "address": "Neue Brücke 2, 70173 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.774,
+    "lng": 9.181,
+    "website": "https://lehmannclub.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "universum-stuttgart",
+    "name": "Universum",
+    "address": "Kronenstr. 20, 70173 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.773,
+    "lng": 9.178,
+    "website": "https://universum-stuttgart.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "goldmarks-stuttgart",
+    "name": "Goldmarks",
+    "address": "Torstr. 18, 70173 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.776,
+    "lng": 9.177,
+    "website": "https://goldmarks.de",
     "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "zw-lfzehn-stuttgart",
+    "name": "Zwölfzehn",
+    "address": "Rotebühlplatz 28, 70173 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.7755,
+    "lng": 9.1745,
+    "website": "https://zwoelfzehn.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "bar-romantica-stuttgart",
+    "name": "Bar Romantica",
+    "address": "Liststr. 34, 70180 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.7694,
+    "lng": 9.1812,
+    "website": "https://bar-romantica.de",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "kellerklub-stuttgart",
+    "name": "Kellerklub",
+    "address": "Heusteigstr. 44, 70180 Stuttgart",
+    "city": "Stuttgart",
+    "lat": 48.768,
+    "lng": 9.18,
+    "website": "https://kellerklub-stuttgart.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
   },
   {
     "id": "distillery-leipzig",
@@ -387,7 +1047,7 @@
     "lat": 51.326,
     "lng": 12.3775,
     "website": "https://distillery.de",
-    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "institut-f-r-zukunft-leipzig",
@@ -397,7 +1057,7 @@
     "lat": 51.3352,
     "lng": 12.3938,
     "website": "https://ifz.me",
-    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "conne-island-leipzig",
@@ -407,7 +1067,7 @@
     "lat": 51.319,
     "lng": 12.383,
     "website": "https://conne-island.de",
-    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "moritzbastei-leipzig",
@@ -417,7 +1077,7 @@
     "lat": 51.338,
     "lng": 12.3785,
     "website": "https://moritzbastei.de",
-    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
     "id": "noch-besser-leben-leipzig",
@@ -427,7 +1087,107 @@
     "lat": 51.342,
     "lng": 12.3465,
     "website": "https://nochbesserleben.de",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "elsterartig-leipzig",
+    "name": "Elsterartig",
+    "address": "Karl-Heine-Str. 93, 04229 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.336,
+    "lng": 12.341,
+    "website": "https://elsterartig.de",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "tv-club-leipzig",
+    "name": "TV Club",
+    "address": "Gottschedstr. 16, 04109 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.34,
+    "lng": 12.371,
+    "website": "https://tv-club.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "felsenkeller-leipzig",
+    "name": "Felsenkeller",
+    "address": "Karl-Heine-Str. 32, 04229 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.334,
+    "lng": 12.35,
+    "website": "https://felsenkeller-leipzig.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "t-ubchenthal-leipzig",
+    "name": "Täubchenthal",
+    "address": "Antonio-Vivaldi-Str. 20, 04105 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.348,
+    "lng": 12.37,
+    "website": "https://taeubchenthal.com",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "ilses-erika-leipzig",
+    "name": "Ilses Erika",
+    "address": "Bernhard-Göring-Str. 152, 04277 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.321,
+    "lng": 12.385,
+    "website": "https://ilseserika.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "ifz-leipzig",
+    "name": "IfZ",
+    "address": "An den Tierkliniken 38, 04103 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.3353,
+    "lng": 12.394,
+    "website": "https://ifz.me",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "werk-2-leipzig",
+    "name": "Werk 2",
+    "address": "Kochstr. 132, 04277 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.324,
+    "lng": 12.3815,
+    "website": "https://werk-2.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
+    "id": "elipamanoke-leipzig",
+    "name": "Elipamanoke",
+    "address": "Zschochersche Str. 48, 04229 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.332,
+    "lng": 12.344,
+    "website": "https://elipamanoke.de",
     "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "darkflower-leipzig",
+    "name": "Darkflower",
+    "address": "Südplatz 3, 04275 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.3275,
+    "lng": 12.3755,
+    "website": "https://darkflower.club",
+    "imageUrl": "https://images.unsplash.com/photo-1598387993281-d5629f206ef9?w=800"
+  },
+  {
+    "id": "beyerhaus-leipzig",
+    "name": "Beyerhaus",
+    "address": "Franz-Mehring-Str. 4, 04275 Leipzig",
+    "city": "Leipzig",
+    "lat": 51.329,
+    "lng": 12.376,
+    "website": "https://beyerhaus.de",
+    "imageUrl": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800"
   },
   {
     "id": "objekt-klein-a-dresden",
@@ -437,7 +1197,7 @@
     "lat": 51.065,
     "lng": 13.744,
     "website": "https://objekt-klein-a.de",
-    "imageUrl": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "b-renzwinger-dresden",
@@ -447,7 +1207,7 @@
     "lat": 51.054,
     "lng": 13.746,
     "website": "https://baerenzwinger.de",
-    "imageUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "sektor-evolution-dresden",
@@ -457,7 +1217,7 @@
     "lat": 51.068,
     "lng": 13.755,
     "website": "https://sektor-evolution.de",
-    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "club-paula-dresden",
@@ -467,7 +1227,87 @@
     "lat": 51.064,
     "lng": 13.7395,
     "website": "https://clubpaula.de",
-    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+  },
+  {
+    "id": "kraftwerk-mitte-dresden",
+    "name": "Kraftwerk Mitte",
+    "address": "Wettiner Platz 10, 01067 Dresden",
+    "city": "Dresden",
+    "lat": 51.051,
+    "lng": 13.728,
+    "website": "https://kraftwerk-mitte.de",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "altes-wettb-ro-dresden",
+    "name": "Altes Wettbüro",
+    "address": "Antonstr. 8, 01097 Dresden",
+    "city": "Dresden",
+    "lat": 51.062,
+    "lng": 13.738,
+    "website": "https://altes-wettbuero.de",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "scheune-dresden",
+    "name": "Scheune",
+    "address": "Alaunstr. 36-40, 01099 Dresden",
+    "city": "Dresden",
+    "lat": 51.0645,
+    "lng": 13.756,
+    "website": "https://scheune.org",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "groove-station-dresden",
+    "name": "Groove Station",
+    "address": "Katharinenstr. 11-13, 01099 Dresden",
+    "city": "Dresden",
+    "lat": 51.063,
+    "lng": 13.741,
+    "website": "https://groovestation.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "strasse-e-dresden",
+    "name": "Strasse E",
+    "address": "Werner-Hartmann-Str. 2, 01099 Dresden",
+    "city": "Dresden",
+    "lat": 51.066,
+    "lng": 13.758,
+    "website": "https://strasse-e.de",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "industrial-terrain-dresden",
+    "name": "Industrial Terrain",
+    "address": "Leipziger Str. 33, 01097 Dresden",
+    "city": "Dresden",
+    "lat": 51.0615,
+    "lng": 13.731,
+    "website": "https://industrial-terrain.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "tba-dresden",
+    "name": "TBA",
+    "address": "Könneritzstr. 25, 01067 Dresden",
+    "city": "Dresden",
+    "lat": 51.0495,
+    "lng": 13.721,
+    "website": "https://tba-dresden.de",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "bunker-dresden",
+    "name": "Bunker",
+    "address": "Bremer Str. 18, 01067 Dresden",
+    "city": "Dresden",
+    "lat": 51.053,
+    "lng": 13.7245,
+    "website": "https://bunker-dresden.de",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
   },
   {
     "id": "subkultur-hannover",
@@ -477,7 +1317,7 @@
     "lat": 52.384,
     "lng": 9.7315,
     "website": "https://subkultur-hannover.de",
-    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "musikzentrum-hannover",
@@ -487,7 +1327,7 @@
     "lat": 52.388,
     "lng": 9.735,
     "website": "https://musikzentrum-hannover.de",
-    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "chez-heinz-hannover",
@@ -497,7 +1337,77 @@
     "lat": 52.3715,
     "lng": 9.712,
     "website": "https://chezheinz.de",
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+  },
+  {
+    "id": "faust-hannover",
+    "name": "Faust",
+    "address": "Zur Bettfedernfabrik 3, 30451 Hannover",
+    "city": "Hannover",
+    "lat": 52.368,
+    "lng": 9.72,
+    "website": "https://faustev.de",
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+  },
+  {
+    "id": "capitol-hannover",
+    "name": "Capitol",
+    "address": "Schwarzer Bär 2, 30449 Hannover",
+    "city": "Hannover",
+    "lat": 52.372,
+    "lng": 9.725,
+    "website": "https://capitol-hannover.de",
     "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "lux-hannover",
+    "name": "LUX",
+    "address": "Schwarzer Bär 2, 30449 Hannover",
+    "city": "Hannover",
+    "lat": 52.3722,
+    "lng": 9.7252,
+    "website": "https://lux-hannover.de",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "b-i-ch-z-heinz-hannover",
+    "name": "Béi Chéz Heinz",
+    "address": "Liepmannstr. 7b, 30453 Hannover",
+    "city": "Hannover",
+    "lat": 52.3716,
+    "lng": 9.7122,
+    "website": "https://chezheinz.de",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "broncos-hannover",
+    "name": "Broncos",
+    "address": "Schwarzer Bär 7, 30449 Hannover",
+    "city": "Hannover",
+    "lat": 52.3718,
+    "lng": 9.7248,
+    "website": "https://broncos-hannover.de",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "kulturpalast-hannover",
+    "name": "Kulturpalast",
+    "address": "Deisterstr. 24, 30449 Hannover",
+    "city": "Hannover",
+    "lat": 52.366,
+    "lng": 9.726,
+    "website": "https://kulturpalast-hannover.de",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "palo-palo-hannover",
+    "name": "Palo Palo",
+    "address": "Raschplatz 7, 30161 Hannover",
+    "city": "Hannover",
+    "lat": 52.378,
+    "lng": 9.742,
+    "website": "https://palopalo.de",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
   },
   {
     "id": "grelle-forelle-wien",
@@ -507,7 +1417,7 @@
     "lat": 48.2278,
     "lng": 16.359,
     "website": "https://grelleforelle.com",
-    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "flex-wien",
@@ -517,7 +1427,7 @@
     "lat": 48.2125,
     "lng": 16.3685,
     "website": "https://flex.at",
-    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "pratersauna-wien",
@@ -527,7 +1437,7 @@
     "lat": 48.2162,
     "lng": 16.3988,
     "website": "https://pratersauna.tv",
-    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "sass-music-club-wien",
@@ -537,7 +1447,7 @@
     "lat": 48.2005,
     "lng": 16.3695,
     "website": "https://sass.at",
-    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
   },
   {
     "id": "techno-cafe-wien",
@@ -547,7 +1457,107 @@
     "lat": 48.217,
     "lng": 16.378,
     "website": "https://technocafe.at",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "fluc-wien",
+    "name": "Fluc",
+    "address": "Praterstern 5, 1020 Wien",
+    "city": "Wien",
+    "lat": 48.219,
+    "lng": 16.391,
+    "website": "https://fluc.at",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "camera-club-wien",
+    "name": "Camera Club",
+    "address": "Neubaugasse 2, 1070 Wien",
+    "city": "Wien",
+    "lat": 48.201,
+    "lng": 16.353,
+    "website": "https://camera-club.at",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "dual-wien",
+    "name": "Dual",
+    "address": "Burggasse 70, 1070 Wien",
+    "city": "Wien",
+    "lat": 48.2035,
+    "lng": 16.346,
+    "website": "https://dual.wien",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "celeste-wien",
+    "name": "Celeste",
+    "address": "Hamburger Str. 18, 1050 Wien",
+    "city": "Wien",
+    "lat": 48.189,
+    "lng": 16.352,
+    "website": "https://celeste.wien",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "sass-wien",
+    "name": "Sass",
+    "address": "Karlsplatz 1, 1010 Wien",
+    "city": "Wien",
+    "lat": 48.2006,
+    "lng": 16.3696,
+    "website": "https://sass.at",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "rote-bar-wien",
+    "name": "Rote Bar",
+    "address": "Seilerstätte 9, 1010 Wien",
+    "city": "Wien",
+    "lat": 48.204,
+    "lng": 16.3755,
+    "website": "https://rotebar.at",
     "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "volksgarten-wien",
+    "name": "Volksgarten",
+    "address": "Burgring 1, 1010 Wien",
+    "city": "Wien",
+    "lat": 48.2065,
+    "lng": 16.3605,
+    "website": "https://volksgarten.at",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+  },
+  {
+    "id": "vie-i-pee-wien",
+    "name": "Vie i Pee",
+    "address": "Goldschlagstr. 3, 1150 Wien",
+    "city": "Wien",
+    "lat": 48.196,
+    "lng": 16.332,
+    "website": "https://vieipee.at",
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+  },
+  {
+    "id": "das-werk-wien",
+    "name": "Das Werk",
+    "address": "Spittelauer Lände 12, 1090 Wien",
+    "city": "Wien",
+    "lat": 48.228,
+    "lng": 16.3592,
+    "website": "https://daswerk.org",
+    "imageUrl": "https://images.unsplash.com/photo-1598387993281-d5629f206ef9?w=800"
+  },
+  {
+    "id": "elektro-g-nner-wien",
+    "name": "Elektro Gönner",
+    "address": "Mariahilfer Str. 101, 1060 Wien",
+    "city": "Wien",
+    "lat": 48.1975,
+    "lng": 16.344,
+    "website": "https://elektrogoenner.at",
+    "imageUrl": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800"
   },
   {
     "id": "hive-z-rich",
@@ -557,7 +1567,7 @@
     "lat": 47.3878,
     "lng": 8.5185,
     "website": "https://hive-zurich.ch",
-    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
   },
   {
     "id": "zukunft-z-rich",
@@ -567,7 +1577,7 @@
     "lat": 47.3768,
     "lng": 8.5292,
     "website": "https://zukunft.cl",
-    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800"
   },
   {
     "id": "supermarket-z-rich",
@@ -577,7 +1587,7 @@
     "lat": 47.3882,
     "lng": 8.5195,
     "website": "https://supermarket.li",
-    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
   },
   {
     "id": "kauz-z-rich",
@@ -587,6 +1597,86 @@
     "lat": 47.378,
     "lng": 8.5435,
     "website": "https://kauz.ch",
-    "imageUrl": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800"
+    "imageUrl": "https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=800"
+  },
+  {
+    "id": "kaufleuten-z-rich",
+    "name": "Kaufleuten",
+    "address": "Pelikanstr. 18, 8001 Zürich",
+    "city": "Zürich",
+    "lat": 47.373,
+    "lng": 8.535,
+    "website": "https://kaufleuten.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800"
+  },
+  {
+    "id": "mascotte-z-rich",
+    "name": "Mascotte",
+    "address": "Theaterstr. 10, 8001 Zürich",
+    "city": "Zürich",
+    "lat": 47.3665,
+    "lng": 8.541,
+    "website": "https://mascotte.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800"
+  },
+  {
+    "id": "plaza-z-rich",
+    "name": "Plaza",
+    "address": "Badenerstr. 109, 8004 Zürich",
+    "city": "Zürich",
+    "lat": 47.376,
+    "lng": 8.525,
+    "website": "https://plaza-zurich.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1571935436746-b21a8cddab6b?w=800"
+  },
+  {
+    "id": "exil-z-rich",
+    "name": "Exil",
+    "address": "Hardstr. 245, 8005 Zürich",
+    "city": "Zürich",
+    "lat": 47.387,
+    "lng": 8.514,
+    "website": "https://exil-zurich.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+  },
+  {
+    "id": "frieda-s-b-xe-z-rich",
+    "name": "Frieda's Büxe",
+    "address": "Friedaustr. 23, 8003 Zürich",
+    "city": "Zürich",
+    "lat": 47.372,
+    "lng": 8.527,
+    "website": "https://friedas-buexe.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+  },
+  {
+    "id": "sender-z-rich",
+    "name": "Sender",
+    "address": "Kalkbreitestr. 2, 8003 Zürich",
+    "city": "Zürich",
+    "lat": 47.374,
+    "lng": 8.528,
+    "website": "https://sender-zurich.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800"
+  },
+  {
+    "id": "papiersaal-z-rich",
+    "name": "Papiersaal",
+    "address": "Kalanderpl. 6, 8045 Zürich",
+    "city": "Zürich",
+    "lat": 47.37,
+    "lng": 8.523,
+    "website": "https://papiersaal.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+  },
+  {
+    "id": "klaus-z-rich",
+    "name": "Klaus",
+    "address": "Hardstr. 25, 8004 Zürich",
+    "city": "Zürich",
+    "lat": 47.3775,
+    "lng": 8.526,
+    "website": "https://klaus-zurich.ch",
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
   }
 ]
