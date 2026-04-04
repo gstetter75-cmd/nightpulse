@@ -9,6 +9,7 @@ import { EventFilters, type EventFilterState } from '@/components/events/event-f
 import { EventList } from '@/components/events/event-list';
 import { useEvents } from '@/hooks/use-events';
 import { useRealtimeEvents } from '@/hooks/use-realtime-events';
+import { useCityContext } from '@/components/city/city-provider';
 import { DEFAULT_RADIUS_KM } from '@nightpulse/shared';
 
 function matchesSearch(event: DbEvent, query: string): boolean {
@@ -22,6 +23,7 @@ function matchesSearch(event: DbEvent, query: string): boolean {
 }
 
 export default function EventsPage() {
+  const { city } = useCityContext();
   const [filters, setFilters] = useState<EventFilterState>({
     category: null,
     radiusKm: DEFAULT_RADIUS_KM,
@@ -51,6 +53,7 @@ export default function EventsPage() {
     radiusKm: filters.radiusKm,
     category: filters.category,
     fromDate,
+    city: city?.name,
   });
 
   const { newEventIds } = useRealtimeEvents();
@@ -66,14 +69,14 @@ export default function EventsPage() {
       <ParallaxSection speed={0.4} className="pt-32 pb-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <AnimatedText
-            text="Events"
+            text={city ? `Events in ${city.name}` : 'Events'}
             as="h1"
             className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4"
             gradient
             mode="blur-in"
           />
           <p className="text-white/50 text-lg">
-            Entdecke, was in deiner Nähe passiert
+            {city ? `Entdecke, was in ${city.name} passiert` : 'Entdecke, was in deiner Nähe passiert'}
           </p>
         </div>
       </ParallaxSection>

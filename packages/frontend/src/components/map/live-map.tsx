@@ -12,6 +12,8 @@ interface LiveMapProps {
   readonly className?: string;
   readonly zoom?: number;
   readonly onZoomChange?: (zoom: number) => void;
+  readonly centerLat?: number;
+  readonly centerLng?: number;
 }
 
 interface ViewState {
@@ -33,10 +35,12 @@ const CATEGORY_COLORS: Record<string, string> = {
   OTHER: '#64748b',
 };
 
-export function LiveMap({ events, onMarkerClick, className = '', zoom: controlledZoom, onZoomChange }: LiveMapProps) {
+export function LiveMap({ events, onMarkerClick, className = '', zoom: controlledZoom, onZoomChange, centerLat, centerLng }: LiveMapProps) {
+  const initialLat = centerLat ?? DEFAULT_CENTER.lat;
+  const initialLng = centerLng ?? DEFAULT_CENTER.lng;
   const [viewState, setViewState] = useState<ViewState>({
-    latitude: DEFAULT_CENTER.lat,
-    longitude: DEFAULT_CENTER.lng,
+    latitude: initialLat,
+    longitude: initialLng,
     zoom: controlledZoom ?? 12,
   });
   // Sync controlled zoom from parent
@@ -46,6 +50,18 @@ export function LiveMap({ events, onMarkerClick, className = '', zoom: controlle
     }
   // intentionally omitting viewState.zoom to avoid infinite loop
   }, [controlledZoom]);
+
+  // Fly to new city center when it changes
+  useEffect(() => {
+    if (centerLat != null && centerLng != null) {
+      if (mapRef) {
+        mapRef.flyTo({ center: [centerLng, centerLat], zoom: viewState.zoom });
+      } else {
+        setViewState((prev) => ({ ...prev, latitude: centerLat, longitude: centerLng }));
+      }
+    }
+  // intentionally omitting mapRef and viewState.zoom to avoid re-triggering
+  }, [centerLat, centerLng]);
 
   const [bounds, setBounds] = useState<MapBounds | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);

@@ -11,6 +11,7 @@ interface UseEventsFilters {
   readonly radiusKm?: number;
   readonly category?: EventCategory | null;
   readonly fromDate?: string;
+  readonly city?: string;
 }
 
 interface UseEventsReturn {
@@ -46,6 +47,10 @@ function filterEventsClientSide(
   filters: UseEventsFilters,
 ): readonly DbEvent[] {
   let filtered = [...events];
+
+  if (filters.city) {
+    filtered = filtered.filter((e) => e.city === filters.city);
+  }
 
   if (filters.category) {
     filtered = filtered.filter((e) => e.category === filters.category);
@@ -125,7 +130,7 @@ export function useEvents(filters: UseEventsFilters = {}): UseEventsReturn {
     } finally {
       setLoading(false);
     }
-  }, [filters.lat, filters.lng, filters.radiusKm, filters.category, filters.fromDate]);
+  }, [filters.lat, filters.lng, filters.radiusKm, filters.category, filters.fromDate, filters.city]);
 
   useEffect(() => {
     fetchEvents();

@@ -11,6 +11,7 @@ import { PageTransition } from '@/components/layout/page-transition';
 import { useGeolocation } from '@/hooks/use-geolocation';
 import { useEvents } from '@/hooks/use-events';
 import { useRealtimeEvents } from '@/hooks/use-realtime-events';
+import { useCityContext } from '@/components/city/city-provider';
 
 // Dynamic import - maps need browser APIs
 const LiveMap = dynamic(
@@ -26,8 +27,11 @@ const LiveMap = dynamic(
 );
 
 export default function MapPage() {
+  const { city } = useCityContext();
   const { lat, lng, refresh: refreshLocation } = useGeolocation();
-  const { events } = useEvents({ lat, lng, radiusKm: 50 });
+  const mapLat = city?.lat ?? lat;
+  const mapLng = city?.lng ?? lng;
+  const { events } = useEvents({ lat: mapLat, lng: mapLng, radiusKm: 50, city: city?.name });
   useRealtimeEvents();
 
   const [selectedEvent, setSelectedEvent] = useState<DbEvent | null>(null);
@@ -55,6 +59,8 @@ export default function MapPage() {
           onMarkerClick={setSelectedEvent}
           zoom={zoom}
           onZoomChange={setZoom}
+          centerLat={mapLat}
+          centerLng={mapLng}
           className="w-full h-full"
         />
 

@@ -404,17 +404,22 @@ export default function HomePage() {
     return () => controller.abort();
   }, []);
 
+  // Filter events by selected city
+  const cityEvents = city
+    ? allEvents.filter((e) => e.city === city.name)
+    : allEvents;
+
   // Curated sections
-  const tonightEvents = getEventsForTimeRange(allEvents, 12);
-  const tomorrowEvents = getEventsForTimeRange(allEvents, 24);
+  const tonightEvents = getEventsForTimeRange(cityEvents, 12);
+  const tomorrowEvents = getEventsForTimeRange(cityEvents, 24);
   const showTonight = tonightEvents.length > 0;
   const heroSectionEvents = showTonight ? tonightEvents : tomorrowEvents;
   const cityLabel = city ? ` in ${city.name}` : '';
   const heroSectionTitle = showTonight ? `Heute Nacht${cityLabel}` : `Morgen${cityLabel}`;
 
-  const weekendEvents = getWeekendEvents(allEvents);
-  const featuredEvents = getFeaturedEvents(allEvents, 3);
-  const _previewEvents = allEvents.slice(0, 6);
+  const weekendEvents = getWeekendEvents(cityEvents);
+  const featuredEvents = getFeaturedEvents(cityEvents, 3);
+  const _previewEvents = cityEvents.slice(0, 6);
 
   return (
     <div className="relative">
